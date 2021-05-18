@@ -5,7 +5,7 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC -U
 Grupo 11:						
 11219216,   Gustavo Bartholomeu Trad Souza,			gustavobartholomeu@usp.br;		
 11219175,	  Luca Maciel Alexander,			        lucapitan72@usp.br;		
-11219175,	  Victor Cologni Seles,			          victorcologniseles@usp.br;		
+11795398,	  Victor Cologni Seles,			          victorcologniseles@usp.br;		
 
 
 1. Requirements: The requirements are given in the assignment, but you have to add any
