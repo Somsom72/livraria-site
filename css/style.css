@@ -1,0 +1,29 @@
+*{
+    font-size: 100%;
+}
+
+@font-face {
+    font-family: Dancing-Script;
+src: url(../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+}
+
+body{
+    min-width: 800px;
+}
+
+.main-colored{
+    background-color: rgba(90, 255, 173, 0.753);
+}
+
+#nav-bar{
+    height: 110px;
+    text-align: center;
+    padding: 10px 15px 0 15px;
+
+}
+
+#site-name{
+    font-size: 3.0em;
+    font-family: Dancing-Script;
+    font-weight: bold;
+}
