@@ -10,7 +10,8 @@ src: url(../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
 }
 
 body{
-    min-width: 800px;
+    min-width: 1500px;
+    background-color: rgba(226, 248, 238, 0.89);
 }
 
 .main-colored{
@@ -20,7 +21,7 @@ body{
 #navbar{
     min-height: 110px;
     text-align: center;
-    padding: 15px 10% 0 5%;
+    padding: 15px 2% 0 5%;
     margin: 0;
     list-style: none;
     display: block;
@@ -36,6 +37,12 @@ body{
     float: left;
 }
 
+
 #login-form{
     float: right;
 }
+
+.grid-container {
+    display: inline-grid;
+    grid-gap: 50px;
+  }
