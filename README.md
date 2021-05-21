@@ -14,8 +14,7 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC -U
 
 
 
-2. **Project Description:** Describe how your project implements the functionality in the
-requirements. Diagrams can help a lot here.
+2. **Project Description:**
 - *O projeto visa implementar um website de vendas para uma livraria virtual: a "Livraria ICMC". São previstos três tipos de usuários: um internauta não cadastrado, um cliente cadastrado e um administrador.* 
 - *A única categoria de produtos a serem vendidos é a de livros. As principais informações armazenadas no lado do servidor serão características dos usuários ou dos livros (exatamente aquelas elencadas na descrição do trabalho: nome, email, foto, preço, etc.).*
 - *O site deve possuir uma página principal, com alguns produtos exibidos, um campo de busca e campos para se cadastrar ou fazer login.*
@@ -25,15 +24,11 @@ requirements. Diagrams can help a lot here.
 - *O site deve possuir uma página que exibe as informações sobre a conta de um cliente.*
 - *O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.*
 
-
-
-2.1 **Navigation Diagram:**
+**Navigation Diagram:**
 
 
 
 3. **Comments About the Code:** 
-Any comment you may want to add to help understand
-your code. This is good programming practice.
 *O código fonte é dividido em diretórios intuitivamente nomeados. Os arquivos .html encontram-se fora desses diretórios, e cada um representa uma página distinta do sistema. Demais observações sobre a implementação podem ser encontrados em forma de comentários dentro do próprio código.*
 
 
@@ -73,11 +68,3 @@ Any comments you wish to add.
 **
 
 
-
-*******************************************************************************************************
-Do not forget to include in the Project Description:
-
-● Navigation diagram for your application linked to the screen mockups. This link can be
-just the name of the mockup (i.e. Mockup1, Mockup2, etc) or an HTML link.
-
-*******************************************************************************************************
