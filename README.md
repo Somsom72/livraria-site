@@ -16,7 +16,6 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC -U
 
 2. **Project Description:** Describe how your project implements the functionality in the
 requirements. Diagrams can help a lot here.
-
 - *O projeto visa implementar um website de vendas para uma livraria virtual: a "Livraria ICMC". São previstos três tipos de usuários: um internauta não cadastrado, um cliente cadastrado e um administrador.* 
 - *A única categoria de produtos a serem vendidos é a de livros. As principais informações armazenadas no lado do servidor serão características dos usuários ou dos livros (exatamente aquelas elencadas na descrição do trabalho: nome, email, foto, preço, etc.).*
 - *O site deve possuir uma página principal, com alguns produtos exibidos, um campo de busca e campos para se cadastrar ou fazer login.*
@@ -25,6 +24,10 @@ requirements. Diagrams can help a lot here.
 - *O site deve possuir uma página exibindo os nomes dos produtos que se encontram no carrinho do cliente, juntamente aos preços e à possibilidade de alterar as quantidades destes produtos. É nesta página que o usuário teria a opção de finalizar a compra.*
 - *O site deve possuir uma página que exibe as informações sobre a conta de um cliente.*
 - *O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.*
+
+
+
+2.1 **Navigation Diagram:**
 
 
 
@@ -73,9 +76,8 @@ Any comments you wish to add.
 
 *******************************************************************************************************
 Do not forget to include in the Project Description:
-● The functionalities you are going to implement.
+
 ● Navigation diagram for your application linked to the screen mockups. This link can be
 just the name of the mockup (i.e. Mockup1, Mockup2, etc) or an HTML link.
-● The information you are going to save in the server (no need to decide how that
-information will be saved).
+
 *******************************************************************************************************
