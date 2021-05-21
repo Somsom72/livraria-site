@@ -23,8 +23,7 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC -U
 - *O site deve possuir uma página exibindo os nomes dos produtos que se encontram no carrinho do cliente, juntamente aos preços e à possibilidade de alterar as quantidades destes produtos. É nesta página que o usuário teria a opção de finalizar a compra.*
 - *O site deve possuir uma página que exibe as informações sobre a conta de um cliente.*
 - *O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.*
-
-**Navigation Diagram:**
+- **Navigation Diagram:**
 
 
 
@@ -34,8 +33,6 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC -U
 
 
 4. **Test Plan:** 
-Text describing the tests that will be performed. If an automatic test
-tool/framework is used (ex: Selenium, jUnit, Spock), the code for the tests can be used.
 *Quando a lógica do servidor for implementada, testaremos utilizando o postman para realizar requests e conferir replies. Para conferir a qualidade do front-end, exaustaremos os caminhos de navegação pelo site manualmente, enquanto modificando variáveis como browsers e dispositivos.*
 
 
