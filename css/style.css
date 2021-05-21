@@ -65,3 +65,27 @@ body{
     font-family: Dancing-Script;
     font-size: 20px;
 }
+
+#admin-panel{
+    color: black;
+    padding: 20px;
+    margin-top: 200px;
+    background-color: slategray;
+    width: fit-content;
+}
+
+#admin-form{
+    width: 500px;
+    text-align: left;
+    background-color: rgb(147, 169, 190);
+    padding: 5px;
+}
+#admin-form > input[type=text], input[type=number]{
+    margin: 2px;
+    margin-left: 0px;
+    width: 99%;
+    align-self: right;
+}
+#admin-form > input[type=submit]{
+    margin-left: 2px;
+}

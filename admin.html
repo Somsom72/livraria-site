@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria ICMC - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav id="navbar" class="main-colored">
+
+        <div id="site-name">
+
+            Livraria ICMC
+        </div>
+
+        <!--  <div id="search-bar">
+            <form>
+                <input type="text" name="pesquisa" placeholder="pesquisar" required>
+                <br><input type="submit" name="login" value="Pesquisar">
+            </form>
+        </div> -->
+
+        <div id=" login-form">
+            <form>
+                Email:
+                <input type="text" name="email" placeholder="Email" required autofocus><br>
+                Senha:
+                <input type="password" name="password" placeholder="Senha" required><br>
+                <br><input type="submit" name="login" value="Login">
+            </form>
+        </div>
+
+        <div id="admin-panel">
+            <form id="admin-form">
+                Id:
+                <input type="text" name="Id" placeholder="Id" required><br><br>
+                Nome:
+                <input type="text" name="text" placeholder="Nome"><br><br>
+                Descrição:
+                <input type="text" name="descricao" placeholder="Descrição" required><br><br>
+                Preço:
+                <input type="number" name="Preço" placeholder="R$0.00" required><br><br>
+                Quantidade:
+                <input type="text" name="quantidade" placeholder="Quantidade" required><br><br>
+                Foto:
+                <input type="file" name="foto"><br>
+                
+                <br><input type="submit" name="new" value="Registrar Produto">
+                <input type="submit" name="search" value="Buscar">
+                <input type="submit" name="update" value="Atualizar">
+                <input type="submit" name="delete" value="Deletar">
+            </form>
+        </div>
+    </nav>
+</body>
+
+</html>
