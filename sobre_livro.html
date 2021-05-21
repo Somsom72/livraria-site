@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livraria ICMC - Sobre o Livro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav id="navbar" class="main-colored">
+        <div id="site-name">
+            Livraria ICMC
+        </div>
+
+        <div id=" login-form">
+            <form>
+                Email:
+                <input type="text" name="email" placeholder="Email" required autofocus><br>
+                Senha:
+                <input type="password" name="password" placeholder="Senha" required><br>
+                <br><input type="submit" name="login" value="Login">
+            </form>
+        </div>
+    </nav>
+
+    <div style="width:100%; margin:10px 25px 10px 25px; padding:10px 25px 10px 25px">
+        <button class=botao_voltar type="button" name="voltar">Voltar</button>
+    </div>
+
+    <div class=container>
+        <div style="float:left; width:40%">
+            <div style="float:left; width:50%">
+                <img class=capa_de_livro src="img/the_hobbit.jpg">
+            </div>
+
+            <div style="float:right; width:50%">
+                <div style="float:top; margin:10px; padding:10px"><h1>Título do Livro</h1></div>
+                <div style="float:bottom; margin:10px; padding:10px">Descrição do Livro. Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at, elementum dolor. Etiam tincidunt justo nec sapien tincidunt, vel ornare turpis efficitur. Nam vehicula at ligula ac lobortis. Curabitur velit dui, dignissim in laoreet eget, elementum nec dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+            </div>
+        </div>
+
+        <div style="float:right; width:40%">
+            <iframe class=capa_de_livro src="frames/pagina_auxiliar.html"></iframe>
+        </div>
+    </div> 
+
+    <div style="width:100%; margin:10px 25px 10px 25px; padding:10px 25px 10px 25px">
+        <div style="position:left; width:20%">
+            <h2>Quantidade em Estoque:</h2>
+        </div>
+        <div style="position:center; width:20%">
+            <h2>Preço: </h2>
+        </div>
+        <div style="position:right; width:50%">
+            <button class=botao_voltar type="button" name="carrinho">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+</body>
+
+</html>
