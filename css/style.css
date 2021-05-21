@@ -1,12 +1,13 @@
-*{
-    font-size: 100%;
-    margin: 0;
-    padding: 0;
-}
 
 @font-face {
     font-family: Dancing-Script;
 src: url(../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif; color: rgb(0, 0, 0);
 }
 
 body{
@@ -47,18 +48,20 @@ body{
     grid-gap: 50px;
   }
 
-.capa_de_livro{
+.capa-de-livro{
     width: 300px;
     height: 450px;
 }
 
-.container{
-    width:100%; 
-    margin:25px; 
-    padding:25;
+.center-container{
+    position: relative;
+    width:60%; 
+    margin:auto; 
+    padding:20px;
+    border-radius: 10%;
 }
 
-.botao_voltar{
+.botao-voltar{
     color: rgba(0, 0, 0, 1);
     background-color:rgba(90, 255, 173, 0.753);
     padding: 10px;
@@ -88,4 +91,17 @@ body{
 }
 #admin-form > input[type=submit]{
     margin-left: 2px;
+}
+.alinha{
+    width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.elemento-alinhado{
+    margin: 10px 5% 10px 5%;
+    padding: 10px;
+    background-color: rgba(90, 255, 173, 0.753);
 }
