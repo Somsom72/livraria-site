@@ -10,32 +10,71 @@
 </head>
 
 <body>
+    <!-- Barra superior -->
     <nav id="navbar" class="main-colored">
+        <div id="site-name">Livraria ICMC</div>
 
-        <div id="site-name">
-
-            Livraria ICMC
-        </div>
-
-        <!--  <div id="search-bar">
-            <form>
-                <input type="text" name="pesquisa" placeholder="pesquisar" required>
-                <br><input type="submit" name="login" value="Pesquisar">
-            </form>
-        </div> -->
-
-        <div id=" login-form">
+        <div id="login-form">
             <form>
                 Email:
                 <input type="text" name="email" placeholder="Email" required autofocus><br>
-                Senha:
+                <br> Senha:
                 <input type="password" name="password" placeholder="Senha" required><br>
-                <br><input type="submit" name="login" value="Login">
             </form>
+
+            <div style="margin: 10px 0 10px 0;">
+                <button class="botao-voltar main-colored" type="button" name="login">Login</button>
+                <button class="botao-voltar main-colored" type="button" name="signup">Cadastrar</button>
+            </div>
+
         </div>
-
-
     </nav>
+
+    <!-- Barra de pesquisa -->
+    <div class="search-bar">
+        <form style="margin: 0 0 0 5%;">
+            <input name="search" placeholder="nome do livro" style="padding: 10px; float: left; margin: 5px 15px 0 0;">
+            <button class="botao-voltar main-colored" type="button" name="search"
+                style="float: center;">Pesquisar</button>
+        </form>
+    </div>
+
+    <!-- Card de produto -->
+    <div class="product-card main-colored">
+
+        <table>
+            <thead>
+                <tr>
+                    <td>
+                        <img src="img/the_hobbit.jpg" alt="book-cover" class="book-card-img">
+                    </td>
+                    <td>
+                        <div style="width: 20px;"></div>
+                    </td>
+                    <td>
+                        <div>
+                            <h2>Título do livro</h2>
+                        </div><br>
+                        <p>Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id
+                            sed
+                            ipsum. Sed sit amet libero tempus, tempus nibh at, elementum dolor.
+                        </p><br>
+                        Quantidade: 53
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <h3>Preço: R$ 4,20</h3>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
 </body>
 
 </html>

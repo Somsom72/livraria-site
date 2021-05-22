@@ -11,60 +11,77 @@
 
 <body>
 
-<!-- Barra de navegação. -->
-<nav id="navbar" class="main-colored">
-    <div id="site-name">
-        Livraria ICMC
-    </div>
+    <!-- Barra de navegação. -->
+    <nav id="navbar" class="main-colored">
+        <div id="site-name">Livraria ICMC</div>
 
-    <div id=" login-form">
-        <form>
-            Email:
-            <input type="text" name="email" placeholder="Email" required autofocus><br>
-            Senha:
-            <input type="password" name="password" placeholder="Senha" required><br>
-            <br><input type="submit" name="login" value="Login">
-        </form>
-    </div>
-</nav>
+        <div id="login-form">
+            <form>
+                Email:
+                <input type="text" name="email" placeholder="Email" required autofocus><br>
+                <br> Senha:
+                <input type="password" name="password" placeholder="Senha" required><br>
+            </form>
 
-<!-- Linha de cima da página, com o botão de voltar e de adicionar ao carrinho. -->
-<div class="alinha">
-    <div style="margin: 10px 5% 10px 5%;"><button class=botao-voltar type="button" name="voltar">Voltar</button></div>
-    <div class="elemento-alinhado"><strong>Quantidade em Estoque:</strong> 53</div>
-    <div class="elemento-alinhado"><strong>Preço:</strong> $35.90</div>
-    <div style="margin: 10px 5% 10px 5%;"><button class="botao-voltar" type="button" name="carrinho">Adicionar ao Carrinho</button></div>
-</div>
-
-<!-- Conteúdo principal da página. -->
-<div class="center-container main-colored">
-<table>
-    <tbody>
-      <tr>
-        <td>
-            <div style="position:relative; text-align:center; margin:auto; padding:10px"><h2>Título do Livro</h2></div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <div><img class="capa-de-livro" src="img/the_hobbit.jpg" style="display:block; position:relative; margin:auto; padding:10px"></div>
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <div style="position:relative; text-align:center; margin:auto; padding:10px"><strong>Descrição do Livro.</strong> Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at, elementum dolor. Etiam tincidunt justo nec sapien tincidunt, vel ornare turpis efficitur. Nam vehicula at ligula ac lobortis. Curabitur velit dui, dignissim in laoreet eget, elementum nec dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <div style="position:relative; text-align:center; margin:auto; padding:10px">
-                <iframe class="capa-de-livro" src="frames/pagina_auxiliar.html" style="background-color:rgba(226, 248, 238, 0.89)"></iframe>
+            <div style="margin: 10px 0 10px 0;">
+                <button class="botao-voltar main-colored" type="button" name="login">Login</button>
+                <button class="botao-voltar main-colored" type="button" name="signup">Cadastrar</button>
             </div>
-        </td>
-      </tr>
-    </tbody>
-</table>
-</div>
+
+        </div>
+    </nav>
+
+    <!-- Linha de cima da página, com o botão de voltar e de adicionar ao carrinho. -->
+    <div class="alinha">
+        <div style="margin: 10px 5% 10px 5%;"><button class="botao-voltar main-colored" type="button"
+                name="voltar">Voltar</button>
+        </div>
+        <div class="elemento-alinhado main-colored"><strong>Quantidade em Estoque:</strong> 53</div>
+        <div class="elemento-alinhado main-colored"><strong>Preço:</strong> $35.90</div>
+        <div style="margin: 10px 5% 10px 5%;"><button class="botao-voltar main-colored" type="button"
+                name="carrinho">Adicionar ao
+                Carrinho</button></div>
+    </div>
+
+    <!-- Conteúdo principal da página. -->
+    <div class="center-container main-colored">
+        <table>
+            <tbody>
+                <tr>
+                    <td>
+                        <div style="position:relative; text-align:center; margin:auto; padding:10px">
+                            <h2>Título do Livro</h2>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div><img class="capa-de-livro" src="img/the_hobbit.jpg"
+                                style="display:block; position:relative; margin:auto; padding:10px"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="position:relative; text-align:center; margin:auto; padding:10px"><strong>Descrição
+                                do Livro.</strong> Praesent euismod semper lectus in tristique. Fusce at nisl ac massa
+                            ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at, elementum
+                            dolor. Etiam tincidunt justo nec sapien tincidunt, vel ornare turpis efficitur. Nam vehicula
+                            at ligula ac lobortis. Curabitur velit dui, dignissim in laoreet eget, elementum nec dolor.
+                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                            egestas.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div style="position:relative; text-align:center; margin:auto; padding:10px">
+                            <iframe class="capa-de-livro" src="frames/pagina_auxiliar.html"
+                                style="background-color:rgba(226, 248, 238, 0.89)"></iframe>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 
