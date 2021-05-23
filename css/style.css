@@ -16,7 +16,7 @@ body{
 }
 
 .main-colored{
-    background-color: rgba(90, 255, 173, 0.753);
+    background-color: rgba(49, 113, 156, 0.753);
 }
 
 #navbar{
@@ -70,17 +70,17 @@ body{
 }
 
 #admin-panel{
+    margin: auto;
     color: black;
     padding: 20px;
     margin-top: 100px;
     background-color: slategray;
     width: fit-content;
 }
-
 #admin-form{
     width: 500px;
     text-align: left;
-    background-color: rgb(147, 169, 190);
+    background-color: rgba(89, 160, 207, 0.753);
     padding: 5px;
 }
 #admin-form > input[type=text], input[type=number]{
@@ -93,6 +93,7 @@ body{
     margin-left: 2px;
     margin: 0 auto;
 }
+
 .alinha{
     width: 100%;
     margin-bottom: 25px;
