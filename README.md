@@ -24,7 +24,7 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC -U
 - *O site deve possuir uma página que exibe as informações sobre a conta de um cliente. O cliente também deve ter a opção de alterar essas informações.*
 - *O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.*
 - **Navigation Diagram:**
-
+!(https://github.com/Somsom72/livraria-site/blob/main/diagrama/navDiagramLivraria.png?raw=true)
 
 
 3. **Comments About the Code:** 
