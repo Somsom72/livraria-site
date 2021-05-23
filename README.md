@@ -22,9 +22,12 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC -U
 - *O site deve possuir uma página de mais informações sobre um livro, em que são exibidas descrições, preços, quantidades em estoque e prévias gratuitas de livros. É nesta página que o usuário teria a opção de adicionar o produto ao carrinho.*
 - *O site deve possuir uma página exibindo os nomes dos produtos que se encontram no carrinho do cliente, juntamente aos preços e à possibilidade de alterar as quantidades destes produtos. É nesta página que o usuário teria a opção de finalizar a compra.*
 - *O site deve possuir uma página que exibe as informações sobre a conta de um cliente. O cliente também deve ter a opção de alterar essas informações.*
-- *O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.*
-- **Navigation Diagram:**
-![Diagrama de Navegação (Inicial)](diagrama/navDiagramLivraria.png?raw=true)
+- *O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.* \
+
+| ![Diagrama de Navegação (Inicial)](diagrama/navDiagramLivraria.png?raw=true) | 
+|:--:| 
+| *Diagrama de Navegação (Inicial)* |
+
 
 
 3. **Comments About the Code:** 
