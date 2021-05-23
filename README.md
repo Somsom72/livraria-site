@@ -24,11 +24,10 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC -U
 - *O site deve possuir uma página que exibe as informações sobre a conta de um cliente. O cliente também deve ter a opção de alterar essas informações.*
 - *O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.*  
 
-<p align="center">
 | ![Diagrama de Navegação (Inicial)](diagrama/navDiagramLivraria.png?raw=true) | 
 |:--:| 
 | *Diagrama de Navegação (Inicial)* |
-</p>
+
 
 
 3. **Comments About the Code:** 
@@ -45,7 +44,6 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC -U
 Text describing the test results. If an automatic test tool/framework is used,
 its output can be used.
 **
-
 
 
 
