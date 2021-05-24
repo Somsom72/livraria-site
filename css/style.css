@@ -12,7 +12,12 @@ src: url(../fonts/Dancing_Script/DancingScript-VariableFont_wght.ttf);
 
 body{
     min-width: 900px;
-    background-color: rgba(226, 248, 238, 0.89);
+    /*background-color: rgba(226, 248, 238, 0.89);*/
+
+    background-image: url("../img/geometric-picture.png");
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
 }
 
 .main-colored{

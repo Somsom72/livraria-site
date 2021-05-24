@@ -23,11 +23,11 @@ a {
 }
 
 #profile-option {
-	left: 450px;
+	left: 15%;
 }
 
 #cart-option {
-	right: 450px;
+	right: 15%;
 }
 
 .icon {
@@ -74,7 +74,7 @@ h1 {
 }
 
 #edit-container {
-	height: 675px;
+	height: 800px;
 	width: 320px;
 }
 
