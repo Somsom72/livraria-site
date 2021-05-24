@@ -2,10 +2,10 @@
 <html lang="en-us">
 
 <head>
-	<title> Meu Carrinho </title>
+	<title> My Cart </title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="css/normalize.cc">
-	<link rel="stylesheet" href="css/style-victor-seles.css">
+	<link rel="stylesheet" href="css/victor-style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,43 +16,159 @@
 
 <body>
 	<div id="cart-container">
-		<h1> Meu Carrinho </h1>
+		<h1> My Cart </h1>
 		<img src="img/shopping-cart-icon.jpg" class="icon" alt="shopping cart icon"><br>
-		<p style="font-size: 16px">Livros em seu carrinho:</p>
+		<p class="normal-text" style="font-size: 16px">Books in your cart:</p>
 		<div id="book-list">
+
 			<div class="book">
-				<div class="title"> Frankenstein </div>
-				<div class="price"> R$ 29,90 </div>
+				<div class="title-area">
+					Frankenstein
+				</div>
+				<div class="price-area">
+					R$ 29,90
+				</div>
+				<div class="quantity-selector-area">
+					<button type="button" class="plus-button">
+						+
+					</button>
+					<button type="button" class="quantity">
+						1
+					</button>
+					<button type="button" class="minus-button">
+						-
+					</button>
+				</div>
 			</div>
+
 			<div class="book">
-				<div class="title"> To Kill a Mocking Bird </div>
-				<div class="price"> R$ 44,90 </div>
+				<div class="title-area">
+					To Kill a Mocking Bird
+				</div>
+				<div class="price-area">
+					R$ 44,90
+				</div>
+				<div class="quantity-selector-area">
+					<button type="button" class="plus-button">
+						+
+					</button>
+					<button type="button" class="quantity">
+						1
+					</button>
+					<button type="button" class="minus-button">
+						-
+					</button>
+				</div>
 			</div>
+
 			<div class="book">
-				<div class="title"> Don Quixote </div>
-				<div class="price"> R$ 46,88 </div>
+				<div class="title-area">
+					Don Quixote
+				</div>
+				<div class="price-area">
+					R$ 46,88
+				</div>
+				<div class="quantity-selector-area">
+					<button type="button" class="plus-button">
+						+
+					</button>
+					<button type="button" class="quantity">
+						1
+					</button>
+					<button type="button" class="minus-button">
+						-
+					</button>
+				</div>
 			</div>
+
 			<div class="book">
-				<div class="title"> Jane Eyre </div>
-				<div class="price"> R$ 35,90 </div>
+				<div class="title-area">
+					Jane Eyre
+				</div>
+				<div class="price-area">
+					R$ 35,90
+				</div>
+				<div class="quantity-selector-area">
+					<button type="button" class="plus-button">
+						+
+					</button>
+					<button type="button" class="quantity">
+						1
+					</button>
+					<button type="button" class="minus-button">
+						-
+					</button>
+				</div>
 			</div>
+
 			<div class="book">
-				<div class="title"> Brave New World </div>
-				<div class="price"> R$ 21,90 </div>
+				<div class="title-area">
+					Brave New World
+				</div>
+				<div class="price-area">
+					R$ 21,90
+				</div>
+				<div class="quantity-selector-area">
+					<button type="button" class="plus-button">
+						+
+					</button>
+					<button type="button" class="quantity">
+						1
+					</button>
+					<button type="button" class="minus-button">
+						-
+					</button>
+				</div>
 			</div>
+
 			<div class="book">
-				<div class="title"> Alice in Wonderland </div>
-				<div class="price"> R$ 29,90 </div>
+				<div class="title-area">
+					Alice in Wonderland
+				</div>
+				<div class="price-area">
+					R$ 29,90
+				</div>
+				<div class="quantity-selector-area">
+					<button type="button" class="plus-button">
+						+
+					</button>
+					<button type="button" class="quantity">
+						1
+					</button>
+					<button type="button" class="minus-button">
+						-
+					</button>
+				</div>
 			</div>
-			<div class="book" style="margin-bottom: 7px;">
-				<div class="title"> Les Miserables </div>
-				<div class="price"> R$ 66,90 </div>
+
+			<div class="book" style="margin-bottom: 0;">
+				<div class="title-area">
+					Les Miserables
+				</div>
+				<div class="price-area">
+					R$ 66,90
+				</div>
+				<div class="quantity-selector-area">
+					<button type="button" class="plus-button">
+						+
+					</button>
+					<button type="button" class="quantity">
+						1
+					</button>
+					<button type="button" class="minus-button">
+						-
+					</button>
+				</div>
 			</div>
 		</div><br>
-		<p style="margin-bottom: 5px;">TOTAL:</p>
+		<p class="normal-text" style="font-size: 16px; margin-bottom: 5px;">TOTAL:</p>
 		<div class="pill-block" style="height: 40px; width: 130px;">
-			<div class= "pill-block-text" style="font-size: 20px;"> R$ 276,28 </div>
+			<div class= "pill-block-text" style="font-size: 20px;">
+				R$ 276,28
+			</div>
 		</div>
-		<button type="submit" name="buttom" id="buy"> COMPRAR </button>
+		<button type="button" name="buy" id="buy">
+			BUY
+		</button>
 	</div>
 </body>
