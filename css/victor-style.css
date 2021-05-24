@@ -1,8 +1,7 @@
 body {
 	height: 100%;
 	width: 100%;
-	/*background-image: url("../img/geometric-picture.png");*/
-	background-color: rgba(49, 113, 156, 0.753);
+	background-image: url("../img/geometric-picture.png");
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-size: 100% 100%;
@@ -15,7 +14,7 @@ a {
 #profile-option, #cart-option {
 	height: 330px;
 	width: 360px;
-	background-color: rgba(226, 248, 238, 0.89);
+	background-color: aliceblue;
 	border-radius: 14px;
   padding: 40px;
   position: absolute;
@@ -24,11 +23,11 @@ a {
 }
 
 #profile-option {
-	left: 15%;
+	left: 450px;
 }
 
 #cart-option {
-	right: 15%;
+	right: 450px;
 }
 
 .icon {
@@ -45,16 +44,22 @@ h1 {
 	text-align: center;
 }
 
-p {
+.normal-text, .small-text {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
 	text-align: center;
 	margin-bottom: 5px;
 }
 
+.normal-text {
+	font-size: 16px;
+}
+
+.small-text {
+	font-size: 14px;
+}
+
 #info-container, #edit-container, #cart-container {
-	width: 320px;
-	background-color: rgba(226, 248, 238, 0.89);
+	background-color: aliceblue;
 	border-radius: 10px;
 	padding: 50px;
 	position: absolute;
@@ -65,14 +70,39 @@ p {
 
 #info-container {
 	height: 675px;
+	width: 320px;
 }
 
 #edit-container {
-	height: 685px;
+	height: 675px;
+	width: 320px;
 }
 
 #cart-container {
-	height: 655px;
+	height: 675px;
+	width: 400px;
+}
+
+.pill-block {
+	height: 30px;
+	background-color: white;
+	border-style: solid;
+	border-color: grey;
+	border-radius: 20px;
+	border-width: 1px;
+	position: relative;
+	left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.pill-block-text {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
 form {
@@ -83,6 +113,7 @@ form {
 input{box-sizing:border-box}
 
 input {
+	outline: none;
 	border-radius: 5px;
 	border-style: none;
 	font-family: 'Open Sans', sans-serif;
@@ -93,8 +124,8 @@ input {
 
 button {
 	height: 40px;
-	border-style: none;
 	border-radius: 20px;
+	border-style: none;
 	position: relative;
 	left: 50%;
   transform: translate(-50%, 0);
@@ -113,7 +144,7 @@ button {
 }
 
 #update {
-	margin-top: 55px;
+	margin-top: 50px;
 	width: 110px;
 	background-color: deepskyblue;
 }
@@ -125,83 +156,62 @@ button {
 }
 
 #book-list {
-	height: 156px;
-	width: 320px;
+	height: 170px;
+	width: 386px;
+	padding: 5px;
 	background-color: lightgrey;
 	border-radius: 5px;
 	overflow: auto;
 }
 
 .book {
-	height: 54px;
-	width: 286px;
+	display: grid;
+	border-radius: 4px;
 	background-color: white;
-	border-radius: 3px;
-	margin-top: 7px;
-	margin-left: 7px;
+	padding: 10px;
+	margin-bottom: 5px;
+	grid-template:
+		"title quantity-selector" 20px
+		"price quantity-selector" 20px
+		/ 60% 40%;
 }
 
-.title {
+.title-area {
+	grid-area: title;
 	font-family: 'Crimson Text', serif;
 	font-style: italic;
-	font-size: 19px;
-  position: relative;
-  top: 50%;
-  transform: translate(0, -50%);
-  text-align: left;
-  left: 10px;
-}
-
-.price {
-	font-family: 'Open Sans', sans-serif;
 	font-size: 16px;
-	font-weight: bold;
-	position: relative;
-	top: -16px;
-  transform: translate(0, 50%);
-  text-align: right;
-  right: 10px;
 }
 
-/*#total-price-block {
-	height: 40px;
-	width: 130px;
-	border-style: solid;
-	border-color: grey;
-	border-radius: 20px;
-	border-width: 2px;
-	position: relative;
-	left: 50%;
-  transform: translate(-50%, 0);
-}*/
-
-/*#total-price-text {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
-	font-weight: bold;
-	text-align: center;
-	position: relative;
-  top: 50%;
-  transform: translate(0, -50%);
-}*/
-
-.pill-block {
-	height: 30px;
-	border-style: solid;
-	border-color: grey;
-	border-radius: 20px;
-	border-width: 2px;
-	position: relative;
-	left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.pill-block-text {
+.price-area {
+	grid-area: price;
 	font-family: 'Open Sans', sans-serif;
 	font-size: 14px;
 	font-weight: bold;
-	text-align: center;
-	position: relative;
-  top: 50%;
-  transform: translate(0, -50%);
+}
+
+.quantity-selector-area {
+	grid-area: quantity-selector;
+	margin: auto;
+}
+
+.plus-button, .quantity, .minus-button {
+	display: inline-block;
+	height: 24px;
+	width: 24px;
+	border-style: none;
+	border-radius: 50%;
+	background-color: #c23a2c;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	color: white;
+}
+
+.quantity {
+	border-radius: 0;
+	background-color: white;
+	font-size: 16px;
+	font-weight: normal;
+	color: black;
+	cursor: default;
 }
