@@ -59,6 +59,7 @@ h1 {
 }
 
 #info-container, #edit-container, #cart-container {
+	height: auto;
 	background-color: aliceblue;
 	border-radius: 10px;
 	padding: 50px;
@@ -69,17 +70,14 @@ h1 {
 }
 
 #info-container {
-	height: 675px;
 	width: 320px;
 }
 
 #edit-container {
-	height: 800px;
 	width: 320px;
 }
 
 #cart-container {
-	height: 675px;
 	width: 400px;
 }
 
