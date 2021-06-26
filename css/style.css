@@ -81,6 +81,7 @@ body{
     margin-top: 100px;
     background-color: slategray;
     width: fit-content;
+    border-radius: 10px;
 }
 #admin-form{
     width: 500px;
