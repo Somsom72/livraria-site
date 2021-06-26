@@ -6,40 +6,102 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Livraria ICMC - Sobre o Livro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Barra de navegação. -->
-    <nav id="navbar" class="main-colored">
-        <div id="site-name">Livraria ICMC</div>
+    <!-- Barra de navegação -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(49, 113, 156, 0.753);">
+        <div class="container-fluid">
+            <!-- Título da página -->
+            <a class="navbar-brand" href="home.html"
+                style="font-size: 3.0em; font-family: Dancing-Script; color: white;">Livraria ICMC</a>
 
-        <div id="login-form">
-            <form>
-                Email:
-                <input type="text" name="email" placeholder="Email" required autofocus><br>
-                <br> Senha:
-                <input type="password" name="password" placeholder="Senha" required><br>
-            </form>
+            <!-- Botao do menu -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-            <div style="margin: 10px 0 10px 0;">
-                <button class="botao-voltar main-colored" type="button" name="login">Login</button>
-                <button class="botao-voltar main-colored" type="button" name="signup">Cadastrar</button>
+            <!-- Conteúdo do menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                    <!-- Botão Home -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="home.html"
+                            style="color: white; font-size: 1.2em;">Home</a>
+                    </li>
+
+                    <!-- Botão cadastrar -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="cadastro.html" style="color: white; font-size: 1.2em;">Cadastrar</a>
+                    </li>
+
+                    <!-- Botão de Login -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-size: 1.2em;">
+                            Login
+                        </a>
+                        <!-- Form de Login -->
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <form>
+                                <!-- Input Email -->
+                                <div class="form-group dropdown-item">
+                                    <label for="inputEmail">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail"
+                                        aria-describedby="emailHelp" placeholder="email">
+                                </div>
+                                <!-- Input Senha -->
+                                <div class="form-group dropdown-item">
+                                    <label for="exampleInputPassword1">Senha</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1"
+                                        placeholder="senha">
+                                </div>
+                                <!-- Botão de Login -->
+                                <button type="submit" class="btn btn-primary ms-3 mt-2">Entrar</button>
+                            </form>
+                        </ul>
+                    </li>
+
+                    <!-- Botão de Minha Conta -- Fazer v-if v-else com login -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-size: 1.2em;">
+                            Minha Conta
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="profile-info.html">Meu Perfil</a>
+                            <a class="dropdown-item" href="cart.html">Carrinho</a>
+                            <a class="dropdown-item" href="profile-edit.html">Editar Perfil</a>
+                        </ul>
+                    </li>
+
+                    <!-- Botão Administrador -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html" tabindex="-1" aria-disabled="true"
+                            style="color: white;font-size: 1.2em;">Administrador</a>
+                    </li>
+                </ul>
+
             </div>
-
         </div>
     </nav>
 
     <!-- Linha de cima da página, com o botão de voltar e de adicionar ao carrinho. -->
     <div class="alinha">
-        <div style="margin: 10px 5% 10px 5%;"><button class="botao-voltar main-colored" type="button"
-                name="voltar">Voltar</button>
+        <div style="margin: 10px 5% 10px 5%;"><button class="btn" style="background-color: rgba(49, 113, 156, 0.753);"
+                type="button" name="voltar">Voltar</button>
         </div>
         <div class="elemento-alinhado main-colored"><strong>Quantidade em Estoque:</strong> 53</div>
         <div class="elemento-alinhado main-colored"><strong>Preço:</strong> $35.90</div>
-        <div style="margin: 10px 5% 10px 5%;"><button class="botao-voltar main-colored" type="button"
-                name="carrinho">Adicionar ao
+        <div style="margin: 10px 5% 10px 5%;"><button class="btn" style="background-color: rgba(49, 113, 156, 0.753);"
+                type="button" name="carrinho">Adicionar ao
                 Carrinho</button></div>
     </div>
 
@@ -83,6 +145,14 @@
         </table>
     </div>
 
+
+    <!-- Scripts do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
