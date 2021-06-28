@@ -90,14 +90,20 @@
                                 Categorias
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="#">Romance</a>
-                                <a class="dropdown-item" href="#">Aventura</a>
-                                <a class="dropdown-item" href="#">Biografias</a>
-                                <a class="dropdown-item" href="#">Ficção</a>
-                                <a class="dropdown-item" href="#">Humor</a>
-                                <a class="dropdown-item" href="#">Científico</a>
-                                <a class="dropdown-item" href="#">Poesia</a>
-                                <a class="dropdown-item" href="#">Suspense</a>
+                                <a @click.stop.prevent="filterBooks('Todos')" class="dropdown-item" href="#">Todos</a>
+                                <a @click.stop.prevent="filterBooks('Romance')" class="dropdown-item"
+                                    href="#">Romance</a>
+                                <a @click.stop.prevent="filterBooks('Aventura')" class="dropdown-item"
+                                    href="#">Aventura</a>
+                                <a @click.stop.prevent="filterBooks('Biografias')" class="dropdown-item"
+                                    href="#">Biografias</a>
+                                <a @click.stop.prevent="filterBooks('Ficção')" class="dropdown-item" href="#">Ficção</a>
+                                <a @click.stop.prevent="filterBooks('Humor')" class="dropdown-item" href="#">Humor</a>
+                                <a @click.stop.prevent="filterBooks('Científico')" class="dropdown-item"
+                                    href="#">Científico</a>
+                                <a @click.stop.prevent="filterBooks('Poesia')" class="dropdown-item" href="#">Poesia</a>
+                                <a @click.stop.prevent="filterBooks('Suspense')" class="dropdown-item"
+                                    href="#">Suspense</a>
                             </ul>
                         </li>
 
@@ -120,7 +126,7 @@
         <!-- Grid de produtos -->
         <div class="row row-cols-4 mt-2">
             <!-- Card de produto -->
-            <div v-for="book in books" class="col mb-2">
+            <div v-for="book in currentBooks" class="col mb-2">
                 <div class="card ms-2 h-100"
                     style="max-width: 300px; min-width: 100px; background-color: rgba(49, 113, 156, 0.753);">
                     <!-- Imagem do livro -->
@@ -148,6 +154,24 @@
         var app = new Vue({
             el: "#app",
 
+            created() {
+                this.filterBooks("Todos");
+            },
+
+            methods: {
+                applyFilter(book) {
+                    return book.categories.includes(this.currentCategory);
+                },
+                filterBooks(category) {
+                    this.currentCategory = category;
+                    if (this.currentCategory == "Todos") {
+                        this.currentBooks = this.books;
+                    } else {
+                        this.currentBooks = this.books.filter(this.applyFilter);
+                    }
+                },
+            },
+
             data: {
                 books: [
                     {
@@ -165,6 +189,8 @@
                         categories: ["Ficção", "Aventura"],
                     },
                 ],
+                currentCategory: "",
+                currentBooks: []
             },
         });
     </script>
