@@ -4,7 +4,7 @@
 <head>
 	<title> My Cart </title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/normalize.cc">
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/victor-style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
@@ -162,13 +162,16 @@
 			</div>
 		</div><br>
 		<p class="normal-text" style="font-size: 16px; margin-bottom: 5px;">TOTAL:</p>
-		<div class="pill-block" style="height: 40px; width: 130px;">
-			<div class= "pill-block-text" style="font-size: 20px;">
-				R$ 276,28
-			</div>
+		<div class="pill-block" id='total-price'>
 		</div>
-		<button type="button" name="buy" id="buy">
-			BUY
-		</button>
+		<a href="purchase-succeeded.html">
+			<button type="button" name="buy" id="buy">
+				BUY
+			</button>
+		</a>
 	</div>
+
+	<script src="javascript\cart.js"></script>
 </body>
+
+</html>

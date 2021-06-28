@@ -4,7 +4,7 @@
 <head>
 	<title> My Profile - Edit </title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/normalize.cc">
+	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/victor-style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Pattaya&display=swap" rel="stylesheet">
@@ -19,19 +19,18 @@
 		<h1> My Profile </h1>
 		<img src="img/profile-icon.png" class="icon" alt="profile icon"><br>
 		<p class="normal-text" style="font-size: 16px"> Edit your profile info: </p>
-		<form>
-			<p class="small-text"> Name: </p>
-			<input type="text" name="name" autocomplete="off" required aria-required="true" autofocus><br>
-			<p class="small-text"> Email: </p>
-			<input type="email" name="email" autocomplete="off" required><br>
-			<p class="small-text"> Phone: </p>
-			<input type="tel" name="phone" autocomplete="off" pattern="[0-9]{2} [0-9]{5} [0-9]{4}" required><br>
-			<p class="small-text"> Address: </p>
-			<input type="text" name="address" autocomplete="off" required><br>
-			<input type="hidden" name="id">
-			<button type="submit" name="update" id="update"> UPDATE </button>
-		</form>
+		<p class="small-text"> Name: </p>
+		<input type="text" name="name" autocomplete="off" required autofocus><br>
+		<p class="small-text"> Email: </p>
+		<input type="text" name="email" autocomplete="off" required><br>
+		<p class="small-text"> Phone: </p>
+		<input type="text" name="phone" autocomplete="off" required><br>
+		<p class="small-text"> Address: </p>
+		<input type="text" name="address" autocomplete="off" required><br>
+		<button name="update" id="update"> UPDATE </button>
 	</div>
+
+	<script src="javascript/profile-edit.js"></script>
 </body>
 
 </html>
