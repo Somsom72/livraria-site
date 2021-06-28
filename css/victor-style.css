@@ -23,11 +23,11 @@ a {
 }
 
 #profile-option {
-	left: 15%;
+	left: 450px;
 }
 
 #cart-option {
-	right: 15%;
+	right: 450px;
 }
 
 .icon {
@@ -58,7 +58,7 @@ h1 {
 	font-size: 14px;
 }
 
-#info-container, #edit-container, #cart-container {
+#info-container, #edit-container, #cart-container, #success-container {
 	height: auto;
 	background-color: aliceblue;
 	border-radius: 10px;
@@ -81,6 +81,10 @@ h1 {
 	width: 400px;
 }
 
+#success-container {
+	width: 320px;
+}
+
 .pill-block {
 	height: 30px;
 	background-color: white;
@@ -101,6 +105,15 @@ h1 {
 	position: relative;
   top: 50%;
   transform: translate(0, -50%);
+}
+
+#total-price {
+	padding-top: 10px;
+	padding-bottom: 5px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
 }
 
 form {
@@ -134,6 +147,11 @@ button {
 	font-weight: bold;
 	color: white;
 	cursor: pointer;
+	transition: 0.3s;
+}
+
+button:hover {
+	opacity: 0.6;
 }
 
 #edit {
@@ -154,6 +172,12 @@ button {
 	background-color: #c23a2c;
 }
 
+#home {
+	margin-top: 35px;
+	width: 90px;
+	background-color: #008040;
+}
+
 #book-list {
 	height: 170px;
 	width: 386px;
@@ -172,7 +196,7 @@ button {
 	grid-template:
 		"title quantity-selector" 20px
 		"price quantity-selector" 20px
-		/ 60% 40%;
+		/ 50% 50%;
 }
 
 .title-area {
@@ -207,10 +231,13 @@ button {
 }
 
 .quantity {
+	margin-left: 6px;
+	width: 30px;
 	border-radius: 0;
 	background-color: white;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: normal;
 	color: black;
+	text-align: center;
 	cursor: default;
 }
