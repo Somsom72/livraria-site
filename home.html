@@ -130,7 +130,7 @@
                 <div class="card ms-2 h-100"
                     style="max-width: 300px; min-width: 100px; background-color: rgba(49, 113, 156, 0.753);">
                     <!-- Imagem do livro -->
-                    <img :src="book.imageUrl" class="card-img-top" alt="O Hobbit">
+                    <img :src="book.imageUrl" class="card-img-top" :alt="book.title">
                     <div class="card-body">
                         <!-- Título -->
                         <h5 class="card-title">{{book.title}}</h5>
@@ -176,14 +176,14 @@
                 books: [
                     {
                         title: "O Hobbit",
-                        imageUrl: "img/the_hobbit.jpg",
+                        imageUrl: "img/covers/the_hobbit.jpg",
                         description: "Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at elementum dolor.",
                         price: "4,20",
                         categories: ["Ficção", "Aventura"],
                     },
                     {
                         title: "O Hobbit",
-                        imageUrl: "img/the_hobbit.jpg",
+                        imageUrl: "img/covers/the_hobbit.jpg",
                         description: "Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at elementum dolor.",
                         price: "4,20",
                         categories: ["Ficção", "Aventura"],
