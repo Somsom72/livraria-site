@@ -12,226 +12,173 @@
 </head>
 
 <body>
-    <!-- Barra de navegação -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(49, 113, 156, 0.753);">
-        <div class="container-fluid">
-            <!-- Título da página -->
-            <a class="navbar-brand" href="home.html"
-                style="font-size: 3.0em; font-family: Dancing-Script; color: white;">Livraria ICMC</a>
+    <div id="app">
+        <!-- Barra de navegação -->
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(49, 113, 156, 0.753);">
+            <div class="container-fluid">
+                <!-- Título da página -->
+                <a class="navbar-brand" href="home.html"
+                    style="font-size: 3.0em; font-family: Dancing-Script; color: white;">Livraria ICMC</a>
 
-            <!-- Botao do menu -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+                <!-- Botao do menu -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-            <!-- Conteúdo do menu -->
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Conteúdo do menu -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                    <!-- Botão Home -->
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="home.html"
-                            style="color: white; font-size: 1.2em;">Home</a>
-                    </li>
+                        <!-- Botão Home -->
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="home.html"
+                                style="color: white; font-size: 1.2em;">Home</a>
+                        </li>
 
-                    <!-- Botão cadastrar -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="cadastro.html" style="color: white; font-size: 1.2em;">Cadastrar</a>
-                    </li>
+                        <!-- Botão cadastrar -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="cadastro.html"
+                                style="color: white; font-size: 1.2em;">Cadastrar</a>
+                        </li>
 
-                    <!-- Botão de Login -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-size: 1.2em;">
-                            Login
-                        </a>
-                        <!-- Form de Login -->
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <form>
-                                <!-- Input Email -->
-                                <div class="form-group dropdown-item">
-                                    <label for="inputEmail">Email</label>
-                                    <input type="email" class="form-control" id="inputEmail"
-                                        aria-describedby="emailHelp" placeholder="email">
-                                </div>
-                                <!-- Input Senha -->
-                                <div class="form-group dropdown-item">
-                                    <label for="exampleInputPassword1">Senha</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1"
-                                        placeholder="senha">
-                                </div>
-                                <!-- Botão de Login -->
-                                <button type="submit" class="btn btn-primary ms-3 mt-2">Entrar</button>
-                            </form>
-                        </ul>
-                    </li>
+                        <!-- Botão de Login -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-size: 1.2em;">
+                                Login
+                            </a>
+                            <!-- Form de Login -->
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <form>
+                                    <!-- Input Email -->
+                                    <div class="form-group dropdown-item">
+                                        <label for="inputEmail">Email</label>
+                                        <input type="email" class="form-control" id="inputEmail"
+                                            aria-describedby="emailHelp" placeholder="email">
+                                    </div>
+                                    <!-- Input Senha -->
+                                    <div class="form-group dropdown-item">
+                                        <label for="exampleInputPassword1">Senha</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1"
+                                            placeholder="senha">
+                                    </div>
+                                    <!-- Botão de Login -->
+                                    <button type="submit" class="btn btn-primary ms-3 mt-2">Entrar</button>
+                                </form>
+                            </ul>
+                        </li>
 
-                    <!-- Botão de Minha Conta -- Fazer v-if v-else com login -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-size: 1.2em;">
-                            Minha Conta
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="profile-info.html">Meu Perfil</a>
-                            <a class="dropdown-item" href="cart.html">Carrinho</a>
-                            <a class="dropdown-item" href="profile-edit.html">Editar Perfil</a>
-                        </ul>
-                    </li>
+                        <!-- Botão de Minha Conta -- Fazer v-if v-else com login -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-size: 1.2em;">
+                                Minha Conta
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="profile-info.html">Meu Perfil</a>
+                                <a class="dropdown-item" href="cart.html">Carrinho</a>
+                                <a class="dropdown-item" href="profile-edit.html">Editar Perfil</a>
+                            </ul>
+                        </li>
 
-                    <!-- Botão de Categoria -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-size: 1.2em;">
-                            Categorias
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Romance</a>
-                            <a class="dropdown-item" href="#">Aventura</a>
-                            <a class="dropdown-item" href="#">Biografias</a>
-                            <a class="dropdown-item" href="#">Ficção</a>
-                            <a class="dropdown-item" href="#">Humor</a>
-                            <a class="dropdown-item" href="#">Científico</a>
-                            <a class="dropdown-item" href="#">Poesia</a>
-                            <a class="dropdown-item" href="#">Suspense</a>
-                        </ul>
-                    </li>
+                        <!-- Botão de Categoria -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color: white; font-size: 1.2em;">
+                                Categorias
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Romance</a>
+                                <a class="dropdown-item" href="#">Aventura</a>
+                                <a class="dropdown-item" href="#">Biografias</a>
+                                <a class="dropdown-item" href="#">Ficção</a>
+                                <a class="dropdown-item" href="#">Humor</a>
+                                <a class="dropdown-item" href="#">Científico</a>
+                                <a class="dropdown-item" href="#">Poesia</a>
+                                <a class="dropdown-item" href="#">Suspense</a>
+                            </ul>
+                        </li>
 
-                    <!-- Botão Administrador -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin.html" tabindex="-1" aria-disabled="true"
-                            style="color: white;font-size: 1.2em;">Administrador</a>
-                    </li>
-                </ul>
+                        <!-- Botão Administrador -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="admin.html" tabindex="-1" aria-disabled="true"
+                                style="color: white;font-size: 1.2em;">Administrador</a>
+                        </li>
+                    </ul>
 
-                <!-- Barra de Pesquisa -->
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Search">
-                    <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
-                </form>
+                    <!-- Barra de Pesquisa -->
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisa" aria-label="Search">
+                        <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <!-- Grid de produtos -->
-    <div class="row row-cols-4 mt-2">
-        <div class="col mb-2">
+        <!-- Grid de produtos -->
+        <div class="row row-cols-4 mt-2">
             <!-- Card de produto -->
-            <div class="card ms-2 h-100"
-                style="max-width: 300px; min-width: 100px; background-color: rgba(49, 113, 156, 0.753);">
-                <!-- Imagem do livro -->
-                <img src="img/the_hobbit.jpg" class="card-img-top" alt="O Hobbit">
-                <div class="card-body">
-                    <!-- Título -->
-                    <h5 class="card-title">O Hobbit</h5>
-                    <!-- Descrição -->
-                    <p class="card-text">Praesent euismod semper lectus in tristique. Fusce at nisl ac massa
-                        ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at,
-                        elementum dolor.</p>
-                    <!-- Preço -->
-                    <h4 class="card-text">R$ 4,20</h4>
-                    <!-- Botão de comprar -->
-                    <a href="sobre_livro.html" class="btn btn-light">Mais Detalhes</a>
-                </div>
-            </div>
-        </div>
-        <!-- Card de produto -->
-        <div class="col  mb-2">
-            <div class="card ms-2 h-100"
-                style="max-width: 300px; min-width: 150px; background-color: rgba(49, 113, 156, 0.753);">
-                <img src="img/the_hobbit.jpg" class="card-img-top" alt="O Hobbit">
-                <div class="card-body">
-                    <h5 class="card-title">O Hobbit</h5>
-                    <p class="card-text">Praesent eu libero tempus, tempus nibh at,
-                        elementum dolor.</p>
-                    <h4 class="card-text">R$ 4,20</h4>
-                    <a href="sobre_livro.html" class="btn btn-light">Mais Detalhes</a>
-                </div>
-            </div>
-        </div>
-        <!-- Card de produto -->
-        <div class="col  mb-2">
-            <div class="card ms-2 h-100"
-                style="max-width: 300px; min-width: 150px; background-color: rgba(49, 113, 156, 0.753);">
-                <img src="img/the_hobbit.jpg" class="card-img-top" alt="O Hobbit">
-                <div class="card-body">
-                    <h5 class="card-title">O Hobbit</h5>
-                    <p class="card-text">Praesent euismod semdsdfsdfsdfsdfsdfsdfsfdfsdfper lectus in tristique. Fusce at
-                        nisl ac massa
-                        ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at,
-                        elementum dolor.</p>
-                    <h4 class="card-text">R$ 4,20</h4>
-                    <a href="sobre_livro.html" class="btn btn-light">Mais Detalhes</a>
-                </div>
-            </div>
-        </div>
-        <!-- Card de produto -->
-        <div class="col  mb-2">
-            <div class="card ms-2 h-100"
-                style="max-width: 300px; min-width: 150px; background-color: rgba(49, 113, 156, 0.753);">
-                <img src="img/the_hobbit.jpg" class="card-img-top" alt="O Hobbit">
-                <div class="card-body">
-                    <h5 class="card-title">O Hobbit</h5>
-                    <p class="card-text">Praesent euismod semper lectus in tristique. Fusce at nisl ac massa
-                        ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at,
-                        elementum dolor.</p>
-                    <h4 class="card-text">R$ 4,20</h4>
-                    <a href="sobre_livro.html" class="btn btn-light">Mais Detalhes</a>
-                </div>
-            </div>
-        </div>
-        <!-- Card de produto -->
-        <div class="col  mb-2">
-            <div class="card ms-2 h-100"
-                style="max-width: 300px; min-width: 150px; background-color: rgba(49, 113, 156, 0.753);">
-                <img src="img/the_hobbit.jpg" class="card-img-top" alt="O Hobbit">
-                <div class="card-body">
-                    <h5 class="card-title">O Hobbit</h5>
-                    <p class="card-text">Praeseasdasdasdasdasdasdnt euismod semper lectus in tristique. Fusce at nisl ac
-                        massa
-                        ultrices porasdadasdasdasdasdttitor id sed ipssdasdadasdasdasdasdum. Sed sit amet libero tempus,
-                        tempus nibh at,
-                        elementumasdasdasdasdasdasdasdasd dolor.</p>
-                    <h4 class="card-text">R$ 4,20</h4>
-                    <a href="sobre_livro.html" class="btn btn-light">Mais Detalhes</a>
-                </div>
-            </div>
-        </div>
-        <!-- Card de produto -->
-        <div class="col  mb-2">
-            <div class="card ms-2 h-100"
-                style="max-width: 300px; min-width: 150px; background-color: rgba(49, 113, 156, 0.753);">
-                <img src="img/the_hobbit.jpg" class="card-img-top" alt="O Hobbit">
-                <div class="card-body">
-                    <h5 class="card-title">O Hobbit</h5>
-                    <p class="card-text">Praesent euismod semper lectus in tristique. Fusce at nisl ac massa
-                        ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at,
-                        elementum dolor.</p>
-                    <h4 class="card-text">R$ 4,20</h4>
-                    <a href="sobre_livro.html" class="btn btn-light">Mais Detalhes</a>
-                </div>
-            </div>
-        </div>
-        <!-- Card de produto -->
-        <div class="col  mb-2">
-            <div class="card ms-2 h-100"
-                style="max-width: 300px; min-width: 150px; background-color: rgba(49, 113, 156, 0.753);">
-                <img src="img/the_hobbit.jpg" class="card-img-top" alt="O Hobbit">
-                <div class="card-body">
-                    <h5 class="card-title">O Hobbit</h5>
-                    <p class="card-text">Praesent euismodsdasdasdasd semper lectus in tristique. Fusce at nisl ac massa
-                        ultrices portasdasdasdasdasdasdasdtitor id sed ipsum. asdasdasdasdasdasdSed sit amet libero
-                        tempus, tempus nibh at,
-                        elementum asdasdasdasddolor.</p>
-                    <h4 class="card-text">R$ 4,20</h4>
-                    <a href="sobre_livro.html" class="btn btn-light">Mais Detalhes</a>
+            <div v-for="book in books" class="col mb-2">
+                <div class="card ms-2 h-100"
+                    style="max-width: 300px; min-width: 100px; background-color: rgba(49, 113, 156, 0.753);">
+                    <!-- Imagem do livro -->
+                    <img :src="book.imageUrl" class="card-img-top" alt="O Hobbit">
+                    <div class="card-body">
+                        <!-- Título -->
+                        <h5 class="card-title">{{book.title}}</h5>
+                        <!-- Descrição -->
+                        <p class="card-text">{{book.description}}</p>
+                        <!-- Preço -->
+                        <h4 class="card-text">{{book.price}}</h4>
+                        <!-- Botão de comprar -->
+                        <a href="sobre_livro.html" class="btn btn-light">Mais Detalhes</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+    <!-- Instalação Vue.js -->
+    <script src="https://unpkg.com/vue"></script>
+
+    <script>
+        //Mixin é um objeto om a mesma estrutura do vue com elementos comuns a mltiplas instancias do Vue, que evita a repetição de código
+        var mixin = {
+            created() {
+                console.log("Created mixin")
+            },
+            methods: {
+                getUsers() {
+                    //Função que comuica com uma API e pega usuários
+                    console.log("get users mixin")
+                },
+            },
+        }
+
+        var app = new Vue({
+            el: "#app",
+
+            data: {
+                books: [
+                    {
+                        title: "O Hobbit",
+                        imageUrl: "img/the_hobbit.jpg",
+                        description: "Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at elementum dolor.",
+                        price: "4,20",
+                    },
+                    {
+                        title: "O Hobbit",
+                        imageUrl: "img/the_hobbit.jpg",
+                        description: "Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at elementum dolor.",
+                        price: "4,20",
+                    },
+                ],
+            },
+        });
+    </script>
 
     <!-- Scripts do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
