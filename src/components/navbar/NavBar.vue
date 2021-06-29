@@ -191,7 +191,7 @@
           </li>
 
           <!-- Botão Administrador -->
-          <li v-if="true || isLoggedIn && user.isAdmin" class="nav-item">
+          <li v-if="isLoggedIn /* && user.isAdmin */" class="nav-item">
             <router-link
               class="nav-link"
               to='/admin'
