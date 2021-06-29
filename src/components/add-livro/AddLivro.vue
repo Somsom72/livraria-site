@@ -12,6 +12,15 @@
                     <input v-model='price' type="number" name="Preço" min="0" placeholder="R$0.00" class="form-control" required><br>
                     <label for="">Quantidade:</label>
                     <input v-model='ammount' type="number" name="quantidade" min="1" placeholder="Quantidade" class="form-control" required><br>
+                    <label for="">Categorias:</label><br>
+                    <input type="checkbox" value='Romance' v-model="categories"> Romance <br>
+                    <input type="checkbox" value='Aventura' v-model="categories"> Aventura <br>
+                    <input type="checkbox" value='Biografias' v-model="categories"> Biografias <br>
+                    <input type="checkbox" value='Ficção' v-model="categories"> Ficção <br>
+                    <input type="checkbox" value='Humor' v-model="categories"> Humor <br>
+                    <input type="checkbox" value='Científico' v-model="categories"> Científico <br>
+                    <input type="checkbox" value='Poesia' v-model="categories"> Poesia <br>
+                    <input type="checkbox" value='Suspense' v-model="categories"> Suspense <br>
                     <label for="">Preview:</label>
                     <textarea v-model='preview' rows="5" class="form-control" required></textarea><br>
                     <label for="">Foto de capa: </label>
@@ -32,7 +41,8 @@ export default {
       price: '',
       ammount: '',
       preview: '',
-      file: ''
+      file: '',
+      categories: []
     }
   },
 
@@ -56,6 +66,7 @@ export default {
       this.ammount = ''
       this.preview = ''
       this.file = ''
+      this.categories = []
     },
 
     async submit () {
@@ -75,7 +86,8 @@ export default {
           price: this.price,
           ammount: this.ammount,
           preview: this.preview,
-          coverUrl: url
+          coverUrl: url,
+          categories: this.categories
         }
 
         ref.set(payload)
@@ -84,7 +96,7 @@ export default {
 
         this.clearFields()
       } catch (err) {
-        console.log(err)
+        alert('Erro ao cadastrar livro')
       }
     },
 

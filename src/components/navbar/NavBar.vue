@@ -218,6 +218,8 @@
 </template>
 
 <script>
+import { EventBus } from '../../bus.js'
+
 export default {
   name: 'NavBar',
   data () {
@@ -238,6 +240,9 @@ export default {
     })
   },
   methods: {
+    filterBooks (category) {
+      EventBus.$emit('set-filter', category)
+    },
     async doLogout () {
       await this.$firebase.auth().signOut()
       this.isLoggedIn = false

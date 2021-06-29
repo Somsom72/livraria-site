@@ -22,10 +22,17 @@
 </template>
 
 <script>
+import { EventBus } from '../../bus.js'
+
 export default {
+  name: 'home',
+
   created () {
     this.getData()
     this.filterBooks('Todos')
+    EventBus.$on('set-filter', data => {
+      this.filterBooks(data)
+    })
   },
 
   updated () {
@@ -44,19 +51,19 @@ export default {
       const ref = this.$firebase.database().ref('/')
       ref.on('value', snapshot => {
         const values = snapshot.val()
-        this.books = values
+        this.books = Object.keys(values).map(i => values[i])
       })
-      // console.log(this.books)
+      console.log(this.books)
     },
-    applyFilter (book) {
-      return book.categories.includes(this.currentCategory)
-    },
+
     filterBooks (category) {
       this.currentCategory = category
       if (this.currentCategory === 'Todos') {
         this.currentBooks = this.books
       } else {
-        this.currentBooks = this.books.filter(this.applyFilter)
+        this.currentBooks = this.books.filter((book) => {
+          return book.categories.includes(this.currentCategory)
+        })
       }
     }
   },
