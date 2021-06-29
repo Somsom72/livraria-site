@@ -49,6 +49,15 @@ export default {
   },
 
   methods: {
+    clearFields () {
+      this.title = ''
+      this.description = ''
+      this.price = ''
+      this.ammount = ''
+      this.preview = ''
+      this.file = ''
+    },
+
     async submit () {
       let url = ''
 
@@ -69,11 +78,11 @@ export default {
           coverUrl: url
         }
 
-        ref.set(payload, err => {
-          if (err) {
-            console.error(err)
-          }
-        })
+        ref.set(payload)
+
+        alert('Livro Cadastrado')
+
+        this.clearFields()
       } catch (err) {
         console.log(err)
       }
