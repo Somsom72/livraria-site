@@ -33,6 +33,11 @@ export default {
     EventBus.$on('set-filter', data => {
       this.filterBooks(data)
     })
+    EventBus.$on('set-search', data => {
+      if (data.trim().lenght > 0) {
+        // TODO: FIltrar por string
+      }
+    })
   },
 
   updated () {
@@ -72,6 +77,7 @@ export default {
     return {
       books: [],
       currentCategory: '',
+      currentSearchString: '',
       currentBooks: []
     }
   }

@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import BaseSpinner from './components/base_spinner/BaseSpinner'
+import BaseSpinner from './components/base-spinner/BaseSpinner'
 import NavBar from './components/navbar/NavBar'
 export default {
   name: 'App',
