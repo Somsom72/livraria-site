@@ -5,12 +5,12 @@
             <div v-for='(book, i) in currentBooks' class='col mb-2' :key='i'>
                 <div class='card ms-2 h-100' id='book-card'>
                     <!-- Imagem do livro -->
-                    <img :src='book.imageUrl' class='card-img-top' :alt='book.title'>
+                    <img :src='book.coverUrl' class='card-img-top' :alt='book.title'>
                     <div class='card-body'>
                         <!-- Título -->
                         <h5 class='card-title'>{{book.title}}</h5>
                         <!-- Descrição -->
-                        <p class='card-text'>{{book.description}}</p>
+                        <p class='card-text' id="description">{{truncate(book.description)}}</p>
                         <!-- Preço -->
                         <h4 class='card-text'>{{book.price}}</h4>
                         <!-- Botão de comprar -->
@@ -24,6 +24,7 @@
 <script>
 export default {
   created () {
+    this.getData()
     this.filterBooks('Todos')
   },
 
@@ -32,6 +33,21 @@ export default {
   },
 
   methods: {
+    truncate (desc) {
+      if (desc.lenght >= 200) {
+        desc.substring(0, 200)
+        desc += '...'
+      }
+      return desc
+    },
+    getData () {
+      const ref = this.$firebase.database().ref('/')
+      ref.on('value', snapshot => {
+        const values = snapshot.val()
+        this.books = values
+      })
+      // console.log(this.books)
+    },
     applyFilter (book) {
       return book.categories.includes(this.currentCategory)
     },
@@ -47,22 +63,7 @@ export default {
 
   data () {
     return {
-      books: [
-        {
-          title: 'O Hobbit',
-          imageUrl: 'img/covers/the_hobbit.jpg',
-          description: 'Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at elementum dolor.',
-          price: '4,20',
-          categories: ['Ficção', 'Aventura']
-        },
-        {
-          title: 'Senhor dos Aneis',
-          imageUrl: 'img/covers/the_hobbit.jpg',
-          description: 'Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at elementum dolor.',
-          price: '4,20',
-          categories: ['Ficção', 'Aventura']
-        }
-      ],
+      books: [],
       currentCategory: '',
       currentBooks: []
     }
@@ -76,5 +77,12 @@ export default {
     min-width: 100px;
     background-color:
     var(--main-color);
+  }
+  #description{
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 </style>

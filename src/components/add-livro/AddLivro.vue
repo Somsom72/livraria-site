@@ -7,7 +7,7 @@
                     <label for="">Título:</label>
                     <input v-model='title' type="text" name="text" placeholder="Nome" class="form-control" required><br>
                     <label for="">Descrição:</label>
-                    <input v-model='description' type="text" name="descricao" placeholder="Descrição" class="form-control" required><br>
+                    <textarea v-model='description' rows="5" class="form-control" required></textarea><br>
                     <label for="">Preço:</label>
                     <input v-model='price' type="number" name="Preço" min="0" placeholder="R$0.00" class="form-control" required><br>
                     <label for="">Quantidade:</label>
