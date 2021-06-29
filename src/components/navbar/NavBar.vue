@@ -134,55 +134,55 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a
-                @click.stop.prevent="filterBooks('Todos')"
+                @click.stop.prevent="filterBooksByCategory('Todos')"
                 class="dropdown-item"
                 href="#"
                 >Todos</a
               >
               <a
-                @click.stop.prevent="filterBooks('Romance')"
+                @click.stop.prevent="filterBooksByCategory('Romance')"
                 class="dropdown-item"
                 href="#"
                 >Romance</a
               >
               <a
-                @click.stop.prevent="filterBooks('Aventura')"
+                @click.stop.prevent="filterBooksByCategory('Aventura')"
                 class="dropdown-item"
                 href="#"
                 >Aventura</a
               >
               <a
-                @click.stop.prevent="filterBooks('Biografias')"
+                @click.stop.prevent="filterBooksByCategory('Biografias')"
                 class="dropdown-item"
                 href="#"
                 >Biografias</a
               >
               <a
-                @click.stop.prevent="filterBooks('Ficção')"
+                @click.stop.prevent="filterBooksByCategory('Ficção')"
                 class="dropdown-item"
                 href="#"
                 >Ficção</a
               >
               <a
-                @click.stop.prevent="filterBooks('Humor')"
+                @click.stop.prevent="filterBooksByCategory('Humor')"
                 class="dropdown-item"
                 href="#"
                 >Humor</a
               >
               <a
-                @click.stop.prevent="filterBooks('Científico')"
+                @click.stop.prevent="filterBooksByCategory('Científico')"
                 class="dropdown-item"
                 href="#"
                 >Científico</a
               >
               <a
-                @click.stop.prevent="filterBooks('Poesia')"
+                @click.stop.prevent="filterBooksByCategory('Poesia')"
                 class="dropdown-item"
                 href="#"
                 >Poesia</a
               >
               <a
-                @click.stop.prevent="filterBooks('Suspense')"
+                @click.stop.prevent="filterBooksByCategory('Suspense')"
                 class="dropdown-item"
                 href="#"
                 >Suspense</a
@@ -202,15 +202,16 @@
           </li>
         </ul>
 
-        <!-- Barra de Pesquisa -->
+          <!-- Barra de Pesquisa -->
         <form class="d-flex">
           <input
             class="form-control me-2"
             type="search"
             placeholder="Pesquisa"
             aria-label="Search"
+            v-model='search'
           />
-          <button class="btn btn-outline-dark" type="submit">Pesquisar</button>
+            <input @click.prevent='filterBooksByString()' class="btn btn-outline-dark" type="submit" name="new" value="Pesquisar">
         </form>
       </div>
     </div>
@@ -227,7 +228,8 @@ export default {
       email: '',
       password: '',
       isLoggedIn: false,
-      user: {}
+      user: {},
+      search: ''
     }
   },
   created () {
@@ -240,8 +242,12 @@ export default {
     })
   },
   methods: {
-    filterBooks (category) {
+    filterBooksByCategory (category) {
       EventBus.$emit('set-filter', category)
+    },
+    filterBooksByString () {
+      var search = this.search
+      EventBus.$emit('set-search', search)
     },
     async doLogout () {
       await this.$firebase.auth().signOut()
@@ -252,7 +258,6 @@ export default {
       var nav = this
       try {
         await this.$firebase.auth().signInWithEmailAndPassword(email, password).then(function (response) {
-          console.log(response)
           window.uid = response.user.uid
           nav.isLoggedIn = true
         })

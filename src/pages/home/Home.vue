@@ -29,13 +29,13 @@ export default {
 
   created () {
     this.getData()
-    this.filterBooks('Todos')
+    this.filterBooksByCategory('Todos')
     EventBus.$on('set-filter', data => {
-      this.filterBooks(data)
+      this.filterBooksByCategory(data)
     })
     EventBus.$on('set-search', data => {
-      if (data.trim().lenght > 0) {
-        // TODO: FIltrar por string
+      if (data.trim().length > 0) {
+        this.filterBooksByString(data)
       }
     })
   },
@@ -58,10 +58,9 @@ export default {
         const values = snapshot.val()
         this.books = Object.keys(values).map(i => values[i])
       })
-      console.log(this.books)
     },
 
-    filterBooks (category) {
+    filterBooksByCategory (category) {
       this.currentCategory = category
       if (this.currentCategory === 'Todos') {
         this.currentBooks = this.books
@@ -70,6 +69,13 @@ export default {
           return book.categories.includes(this.currentCategory)
         })
       }
+    },
+
+    filterBooksByString (string) {
+      this.currentSearchString = string
+      this.currentBooks = this.books.filter((book) => {
+        return book.title.toLowerCase().includes(this.currentSearchString.toLowerCase())
+      })
     }
   },
 
