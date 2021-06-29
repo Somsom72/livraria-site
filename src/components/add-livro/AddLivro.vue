@@ -20,7 +20,7 @@
                     <input type="checkbox" value='Humor' v-model="categories"> Humor <br>
                     <input type="checkbox" value='Científico' v-model="categories"> Científico <br>
                     <input type="checkbox" value='Poesia' v-model="categories"> Poesia <br>
-                    <input type="checkbox" value='Suspense' v-model="categories"> Suspense <br>
+                    <input type="checkbox" value='Suspense' v-model="categories"> Suspense <br><br>
                     <label for="">Preview:</label>
                     <textarea v-model='preview' rows="5" class="form-control" required></textarea><br>
                     <label for="">Foto de capa: </label>
