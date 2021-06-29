@@ -137,7 +137,7 @@
                         <!-- Descrição -->
                         <p class="card-text">{{book.description}}</p>
                         <!-- Preço -->
-                        <h4 class="card-text">{{book.price}}</h4>
+                        <h4 class="card-text">{{"R$ " + book.price.toFixed(2)}}</h4>
                         <!-- Botão de comprar -->
                         <a href="sobre_livro.html" class="btn btn-light">Mais Detalhes</a>
                     </div>
@@ -150,50 +150,8 @@
     <!-- Instalação Vue.js -->
     <script src="https://unpkg.com/vue"></script>
 
-    <script>
-        var app = new Vue({
-            el: "#app",
-
-            created() {
-                this.filterBooks("Todos");
-            },
-
-            methods: {
-                applyFilter(book) {
-                    return book.categories.includes(this.currentCategory);
-                },
-                filterBooks(category) {
-                    this.currentCategory = category;
-                    if (this.currentCategory == "Todos") {
-                        this.currentBooks = this.books;
-                    } else {
-                        this.currentBooks = this.books.filter(this.applyFilter);
-                    }
-                },
-            },
-
-            data: {
-                books: [
-                    {
-                        title: "O Hobbit",
-                        imageUrl: "img/covers/the_hobbit.jpg",
-                        description: "Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at elementum dolor.",
-                        price: "4,20",
-                        categories: ["Ficção", "Aventura"],
-                    },
-                    {
-                        title: "O Hobbit",
-                        imageUrl: "img/covers/the_hobbit.jpg",
-                        description: "Praesent euismod semper lectus in tristique. Fusce at nisl ac massa ultrices porttitor id sed ipsum. Sed sit amet libero tempus, tempus nibh at elementum dolor.",
-                        price: "4,20",
-                        categories: ["Ficção", "Aventura"],
-                    },
-                ],
-                currentCategory: "",
-                currentBooks: []
-            },
-        });
-    </script>
+    <!-- Lógica da Página, em Vue.js -->
+    <script src="./javascript/main.js"></script>
 
     <!-- Scripts do Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
