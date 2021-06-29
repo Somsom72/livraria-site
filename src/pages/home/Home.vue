@@ -2,7 +2,7 @@
 <!-- Grid de produtos -->
         <div class='row row-cols-4 mt-2'>
             <!-- Card de produto -->
-            <div v-for='book in currentBooks' class='col mb-2' :key='book.title'>
+            <div v-for='(book, i) in currentBooks' class='col mb-2' :key='i'>
                 <div class='card ms-2 h-100' id='book-card'>
                     <!-- Imagem do livro -->
                     <img :src='book.imageUrl' class='card-img-top' :alt='book.title'>
@@ -25,6 +25,10 @@
 export default {
   created () {
     this.filterBooks('Todos')
+  },
+
+  beforeCreate () {
+    // TODO: Carregar lista de livros
   },
 
   methods: {
@@ -71,6 +75,6 @@ export default {
     max-width: 300px;
     min-width: 100px;
     background-color:
-    rgba(49, 113, 156, 0.753);
+    var(--main-color);
   }
 </style>

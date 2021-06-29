@@ -1,21 +1,36 @@
 <template>
   <div id="app">
+    <base-spinner></base-spinner>
     <nav-bar></nav-bar>
-    <books-grid></books-grid>
+    <router-view/>
   </div>
 </template>
 
 <script>
+import BaseSpinner from './components/base_spinner/BaseSpinner'
 import NavBar from './components/navbar/NavBar'
-import BooksGrid from './components/books_grid/BooksGrid'
 export default {
+  name: 'App',
+
   components: {
-    NavBar,
-    BooksGrid
+    BaseSpinner,
+    NavBar
   },
+
   mounted () {
-    console.log(this.$firebase)
+    this.$firebase.auth().onAuthStateChanged(user => {
+      window.uid = user ? user.uid : null
+
+      if (!window.uid) {
+        this.$root.$emit('NavBar::unlogged')
+        this.$router.pus({ name: 'home' })
+      } else {
+        this.$root.$emit('NavBar::logged')
+      }
+      this.$root.$emit('Spinner::hide')
+    })
   },
+
   methods: {
     showSpinner () {
       this.$root.$emit('Spinner::show')

@@ -9,7 +9,7 @@
 export default {
   data () {
     return {
-      visible: false
+      visible: true
     }
   },
   created () {
@@ -25,7 +25,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import "../../assets/scss/variables";
 #base-spinner {
   top: 0;
   bottom: 0;
@@ -38,6 +37,6 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: $main-color;
+  color: var(--main-color);
 }
 </style>

@@ -3,7 +3,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark" id="bar">
     <div class="container-fluid">
       <!-- Título da página -->
-      <a class="navbar-brand" href="home.html" id="title-text">Livraria ICMC</a>
+      <router-link to="/" class="navbar-brand" id="title-text">Livraria ICMC</router-link>
 
       <!-- Botao do menu -->
       <button
@@ -23,27 +23,26 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <!-- Botão Home -->
           <li class="nav-item">
-            <a
+            <router-link
               class="nav-link active"
               aria-current="page"
-              href="home.html"
+              to="/"
               id="menu-text"
-              >Home</a
-            >
+              >Home</router-link>
           </li>
 
           <!-- Botão cadastrar -->
-          <li class="nav-item">
-            <a
+          <li v-if="!isLoggedIn" class="nav-item">
+            <router-link
               class="nav-link"
-              href="cadastro.html"
+              to="/cadastro"
               style="color: white; font-size: 1.2em"
-              >Cadastrar</a
+              >Cadastrar</router-link
             >
           </li>
 
           <!-- Botão de Login -->
-          <li class="nav-item dropdown">
+          <li v-if="!isLoggedIn" class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -57,12 +56,14 @@
             </a>
             <!-- Form de Login -->
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <form>
+              <form @submit.prevent='doLogin()'>
                 <!-- Input Email -->
                 <div class="form-group dropdown-item">
                   <label for="inputEmail">Email</label>
                   <input
+                    required
                     type="email"
+                    v-model='email'
                     class="form-control"
                     id="inputEmail"
                     aria-describedby="emailHelp"
@@ -73,22 +74,30 @@
                 <div class="form-group dropdown-item">
                   <label for="exampleInputPassword1">Senha</label>
                   <input
+                    required
                     type="password"
+                    v-model='password'
                     class="form-control"
                     id="exampleInputPassword1"
                     placeholder="senha"
                   />
                 </div>
                 <!-- Botão de Login -->
-                <button type="submit" class="btn btn-primary ms-3 mt-2">
-                  Entrar
-                </button>
+                <div class="form-group dropdown-item">
+                  <input
+                  class="btn btn-primary ms-3 mt-2"
+                  type="submit"
+                  value="Login"
+                  @click.prevent='doLogin()'
+                  />
+                </div>
+
               </form>
             </ul>
           </li>
 
           <!-- Botão de Minha Conta -- Fazer v-if v-else com login -->
-          <li class="nav-item dropdown">
+          <li v-if="isLoggedIn" class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -106,6 +115,7 @@
               <a class="dropdown-item" href="profile-edit.html"
                 >Editar Perfil</a
               >
+              <a class="btn dropdown-item" @click.prevent='doLogout()'>Logout</a>
             </ul>
           </li>
 
@@ -181,14 +191,13 @@
           </li>
 
           <!-- Botão Administrador -->
-          <li class="nav-item">
-            <a
+          <li v-if="true || isLoggedIn && user.isAdmin" class="nav-item">
+            <router-link
               class="nav-link"
-              href="admin.html"
-              tabindex="-1"
+              to='/admin'
               aria-disabled="true"
               style="color: white; font-size: 1.2em"
-              >Administrador</a
+              >Administrador</router-link
             >
           </li>
         </ul>
@@ -209,17 +218,55 @@
 </template>
 
 <script>
+export default {
+  name: 'NavBar',
+  data () {
+    return {
+      email: '',
+      password: '',
+      isLoggedIn: false,
+      user: {}
+    }
+  },
+  created () {
+    this.$root.$on('NavBar::logged', () => {
+      this.isLoggedIn = true
+    })
+    this.$root.$on('NavBar::unlogged', () => {
+      this.isLoggedIn = false
+      this.$router.pus({ name: 'home' })
+    })
+  },
+  methods: {
+    async doLogout () {
+      await this.$firebase.auth().signOut()
+      this.isLoggedIn = false
+    },
+    async doLogin () {
+      const { email, password } = this
+      var nav = this
+      try {
+        await this.$firebase.auth().signInWithEmailAndPassword(email, password).then(function (response) {
+          console.log(response)
+          window.uid = response.user.uid
+          nav.isLoggedIn = true
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">
-@import "../../assets/scss/variables";
 #bar {
-  background-color: $main-color;
+  background-color: var(--main-color);
 }
 #title-text {
   font-size: 3em;
   font-family: Dancing Script;
-  color: $font-color;
+  color: var(--font-color);
 }
 #menu-text{
   color: white;
