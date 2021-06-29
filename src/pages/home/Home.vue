@@ -28,8 +28,8 @@ export default {
     this.filterBooks('Todos')
   },
 
-  beforeCreate () {
-    // TODO: Carregar lista de livros
+  updated () {
+    this.getData()
   },
 
   methods: {
