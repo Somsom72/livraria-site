@@ -10,37 +10,38 @@ const router = new Router({
     {
       path: '/',
       name: 'home',
-      component: () => import(/* webpackChunkName: "about" */ './pages/home/Home')
+      component: () => import('./pages/home/Home')
     },
     {
       path: '/cadastro',
       name: 'cadastro',
-      component: () => import(/* webpackChunkName: "about" */ './pages/cadastro/Cadastro')
+      component: () => import('./pages/cadastro/Cadastro')
     },
     {
       path: '/cart',
       name: 'cart',
-      component: () => import(/* webpackChunkName: "about" */ './pages/cadastro/Cadastro')
+      component: () => import('./pages/cadastro/Cadastro')
     },
     {
       path: '/admin',
       name: 'admin',
-      component: () => import(/* webpackChunkName: "about" */ './components/add-livro/AddLivro')
+      component: () => import('./components/add-livro/AddLivro')
     },
     {
       path: '/profile-edit',
       name: 'profile-edit',
-      component: () => import(/* webpackChunkName: "about" */ './pages/editar-perfil/EditarPerfil')
+      component: () => import('./pages/editar-perfil/EditarPerfil')
     },
     {
       path: '/profile-info',
       name: 'profile-info',
-      component: () => import(/* webpackChunkName: "about" */ './pages/meu-perfil/MeuPerfil')
+      component: () => import('./pages/meu-perfil/MeuPerfil')
     },
     {
-      path: '/detalhes',
-      name: 'detalhes',
-      component: () => import(/* webpackChunkName: "about" */ './pages/cadastro/Cadastro')
+      path: '/book-info',
+      name: 'book-info',
+      props: true,
+      component: () => import('./pages/sobre-livro/SobreLivro')
     }
   ]
 })

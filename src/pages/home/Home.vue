@@ -14,7 +14,7 @@
                         <!-- Preço -->
                         <h4 class='card-text'>{{book.price}}</h4>
                         <!-- Botão de comprar -->
-                        <a href='sobre_livro.html' class='btn btn-light'>Mais Detalhes</a>
+                        <button @click='goToBookDetails(i)' class='btn btn-light'>Mais Detalhes</button>
                     </div>
                 </div>
             </div>
@@ -52,6 +52,7 @@ export default {
       }
       return desc
     },
+
     async getData () {
       const ref = await this.$firebase.database().ref('books').get()
       var books = ref.val()
@@ -74,6 +75,10 @@ export default {
       this.currentBooks = this.books.filter((book) => {
         return book.title.toLowerCase().includes(this.currentSearchString.toLowerCase())
       })
+    },
+
+    goToBookDetails (i) {
+      this.$router.push({ name: 'book-info', params: { book: this.currentBooks[i] } })
     }
   },
 

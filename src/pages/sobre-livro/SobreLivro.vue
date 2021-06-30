@@ -1,0 +1,97 @@
+<template>
+<div class="sobre-livro">
+  <div class="card m-4 p-3 text-center" id="main-card">
+    <!-- Linha de cima da página, com o botão de voltar e de adicionar ao carrinho. -->
+      <div class="text-center main-colored">
+        <strong class="screen-text">Quantidade em Estoque: {{book.ammount}}</strong>
+      </div><br>
+      <div class="text-center main-colored">
+        <strong class="screen-text">Preço: R${{book.price}}</strong>
+      </div>
+
+      <!-- Conteúdo principal da página. -->
+      <div class="text-center">
+        <table>
+          <tbody>
+            <tr>
+                <td>
+                  <div style="position:relative; text-align:center; margin:auto; padding:10px">
+                      <h2>{{book.title}}</h2>
+                  </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>
+                      <img class="capa-de-livro" :src="book.coverUrl" style="display:block; position:relative; margin:auto; padding:10px">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+              <td>
+                <div style="position:relative; text-align:center; margin:auto; padding:30px">
+                  <strong class="screen-text">Descriçãodo Livro: </strong>
+                  <div width="700px">{{book.description}}</div>
+                </div>
+              </td>
+            </tr>
+              <tr>
+                <td>
+                  <div class="preview">
+                    {{ book.preview }}
+                  </div>
+                </td>
+              </tr>
+          </tbody>
+        </table>
+    </div>
+    <div class="text-center" style="margin: 10px 5% 10px 5%;">
+        <button class="btn btn-success btn-lg" type="button" name="carrinho">Adicionar ao Carrinho</button>
+      </div>
+  </div>
+</div>
+</template>
+
+<script>
+export default {
+  name: 'sobre-livro',
+  props: ['book']
+}
+</script>
+
+<style scoped lang="scss">
+#main-card{
+background-color: var(--main-color);
+width: 1200px
+}
+
+.capa-de-livro{
+width: 400px;
+}
+
+.screen-text{
+font-size: 20px;
+}
+
+.preview{
+  background-color:rgba(226, 248, 238, 0.89);
+  overflow: auto;
+  width: 800px;
+  height: 600px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.description{
+width: 700px;
+position:relative;
+text-align:center;
+margin: 0 10px;
+padding:20px
+}
+
+.elemento-alinhado{
+margin: 10px 5% 10px 5%;
+padding: 10px;
+}
+</style>
