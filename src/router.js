@@ -30,7 +30,7 @@ const router = new Router({
     {
       path: '/profile-edit',
       name: 'profile-edit',
-      component: () => import(/* webpackChunkName: "about" */ './pages/cadastro/Cadastro')
+      component: () => import(/* webpackChunkName: "about" */ './pages/editar-perfil/EditarPerfil')
     },
     {
       path: '/profile-info',
