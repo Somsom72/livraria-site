@@ -1,39 +1,43 @@
 <template>
   <div id="app">
-    <base-spinner></base-spinner>
     <nav-bar></nav-bar>
     <router-view/>
   </div>
 </template>
 
 <script>
-import BaseSpinner from './components/base-spinner/BaseSpinner'
 import NavBar from './components/navbar/NavBar'
+import { EventBus } from './bus.js'
 export default {
   name: 'App',
 
   components: {
-    BaseSpinner,
     NavBar
   },
 
-  mounted () {
-    this.$firebase.auth().onAuthStateChanged(user => {
-      window.uid = user ? user.uid : null
-
-      if (!window.uid) {
-        this.$root.$emit('NavBar::unlogged')
-        this.$router.pus({ name: 'home' })
+  async mounted () {
+    var currentUser = await this.$firebase.auth().currentUser
+    if (currentUser !== null && currentUser.uid !== null) {
+      var user = await this.getUser(currentUser.uid)
+      EventBus.$emit('login', user)
+    }
+    this.$firebase.auth().onAuthStateChanged(firebaseUser => {
+      if (!firebaseUser) {
+        EventBus.$emit('logout')
+        this.$router.push({ name: 'home' })
       } else {
-        this.$root.$emit('NavBar::logged')
+        const user = this.getUser(firebaseUser.uid)
+        EventBus.$emit('login', user)
       }
-      this.$root.$emit('Spinner::hide')
     })
   },
 
   methods: {
-    showSpinner () {
-      this.$root.$emit('Spinner::show')
+    async getUser (uid) {
+      var user = await this.$firebase.database()
+        .ref(`users/${uid}`)
+        .get()
+      return user.val()
     }
   }
 }

@@ -110,7 +110,7 @@
               Minha Conta
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="profile-info.html">Meu Perfil</a>
+              <router-link class="dropdown-item" to='/profile-info'>Meu Perfil</router-link>
               <a class="dropdown-item" href="cart.html">Carrinho</a>
               <a class="dropdown-item" href="profile-edit.html"
                 >Editar Perfil</a
@@ -191,7 +191,7 @@
           </li>
 
           <!-- Botão Administrador -->
-          <li v-if="isLoggedIn /* && user.isAdmin */" class="nav-item">
+          <li v-if="isLoggedIn && user.admin" class="nav-item">
             <router-link
               class="nav-link"
               to='/admin'
@@ -233,38 +233,56 @@ export default {
     }
   },
   created () {
-    this.$root.$on('NavBar::logged', () => {
+    EventBus.$on('login', user => {
       this.isLoggedIn = true
+      this.user = user
+      window.user = user
     })
-    this.$root.$on('NavBar::unlogged', () => {
+    EventBus.$on('logout', () => {
       this.isLoggedIn = false
-      this.$router.pus({ name: 'home' })
+      this.user = {}
+      window.user = null
+      this.$router.push({ name: 'home' })
     })
   },
   methods: {
     filterBooksByCategory (category) {
       EventBus.$emit('set-filter', category)
     },
+
     filterBooksByString () {
       var search = this.search
       EventBus.$emit('set-search', search)
     },
+
     async doLogout () {
       await this.$firebase.auth().signOut()
       this.isLoggedIn = false
+      this.user = null
+      window.user = null
     },
+
     async doLogin () {
       const { email, password } = this
-      var nav = this
       try {
-        await this.$firebase.auth().signInWithEmailAndPassword(email, password).then(function (response) {
-          window.uid = response.user.uid
-          nav.isLoggedIn = true
-        })
+        var firebaseUser = await this.$firebase.auth().signInWithEmailAndPassword(email, password)
+        var user = await this.getUser(firebaseUser.user.uid)
+        window.user = user
+        this.user = user
+        this.isLoggedIn = true
       } catch (error) {
         console.log(error)
+        alert('Erro ao realizar login')
       }
+    },
+
+    async getUser (uid) {
+      var user = await this.$firebase.database()
+        .ref(`users/${uid}`)
+        .get()
+      return user.val()
     }
+
   }
 }
 </script>

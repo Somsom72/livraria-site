@@ -1,230 +1,92 @@
 <template>
 <div class="cadastro">
-
+  <div class="card m-4 p-3" id="signup-form">
+    <div class="card-block">
+      <h1> Cadastro </h1>
+      <img src="../../assets/img/profile-icon.png" id="icon" alt="profile icon"><br>
+      <p id="normal-text"> Cadastre-se: </p>
+      <form class="form-group">
+        <label for="">Email: </label><br>
+        <input v-model='email' type="text" name="email" autocomplete="off" placeholder="Email" class="form-control" required><br>
+        <label for="">Nome: </label><br>
+        <input v-model='name' type="text" name="text" autocomplete="off" placeholder="Nome" class="form-control" required><br>
+        <label for="">Senha: </label><br>
+        <input v-model='password' type="text" name="password" autocomplete="off" placeholder="Senha" class="form-control" required><br>
+        <label for="">Telefone: </label><br>
+        <input v-model='phone' type="tel" name="phone" autocomplete="off" placeholder="XX XXXXX XXXX" pattern="[0-9]{2} [0-9]{5} [0-9]{4}" class="form-control" required><br>
+        <label for="">Endereço: </label><br>
+        <input v-model='address' type="text" name="address" autocomplete="off" placeholder="Endereço" class="form-control" required><br>
+        <input class="btn btn-primary" type="submit" name="button" value="Cadastrar" @click.prevent='signUp()'>
+      </form>
+    </div>
+  </div>
 </div>
 </template>
 
-<script lang="scss" scopped>
+<script>
 export default {
-  name: 'cadastro'
+  name: 'cadastro',
+  data () {
+    return {
+      name: '',
+      password: '',
+      email: '',
+      phone: '',
+      address: '',
+      user: {}
+    }
+  },
+  methods: {
+    async signUp () {
+      try {
+        var userCredential = await this.$firebase.auth()
+          .createUserWithEmailAndPassword(this.email, this.password)
+
+        const user = {
+          id: userCredential.user.uid,
+          name: this.name,
+          email: this.email,
+          phone: this.phone,
+          address: this.address,
+          admin: false
+        }
+        const ref = this.$firebase.database().ref(`users/${userCredential.user.uid}`)
+        ref.set(user)
+        window.user = user
+        alert('Usuario Cadastrado')
+        this.$router.push({ name: 'home' })
+      } catch (err) {
+        alert('Erro ao cadastrar')
+      }
+    }
+  }
 }
 </script>
 
-<style>
-body {
-  height: 100%;
-  width: 100%;
-  /* background-image: url("../img/geometric-picture.png"); */
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
+<style scoped lang="scss">
+#icon {
+display: block;
+margin: auto;
+height: 124px;
+width: 124px;
+border-radius: 50%;
 }
 
-a {
-  color: black;
+#normal-text, .small-text {
+font-family: 'Open Sans', sans-serif;
+text-align: center;
+margin-bottom: 5px;
 }
 
-#profile-option, #cart-option {
-  height: 330px;
-  width: 360px;
-  background-color: aliceblue;
-  border-radius: 14px;
-  padding: 40px;
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
+#normal-text {
+font-size: 16px;
 }
 
-#profile-option {
-  left: 15%;
+#small-text {
+font-size: 14px;
 }
 
-#cart-option {
-  right: 15%;
-}
-
-.icon {
-  display: block;
-  margin: auto;
-  height: 124px;
-  width: 124px;
-  border-radius: 50%;
- }
-
-h1 {
-  font-family: 'Pattaya', sans-serif;
-  font-size: 40px;
-  text-align: center;
-}
-
-.normal-text, .small-text {
-  font-family: 'Open Sans', sans-serif;
-  text-align: center;
-  margin-bottom: 5px;
-}
-
-.normal-text {
-  font-size: 16px;
-}
-
-.small-text {
-  font-size: 14px;
-}
-
-#info-container, #edit-container, #cart-container {
-  height: auto;
-  background-color: aliceblue;
-  border-radius: 10px;
-  padding: 50px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#info-container {
-  width: 320px;
-}
-
-#edit-container {
-  width: 320px;
-}
-
-#cart-container {
-  width: 400px;
-}
-
-.pill-block {
-  height: 30px;
-  background-color: white;
-  border-style: solid;
-  border-color: grey;
-  border-radius: 20px;
-  border-width: 1px;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.pill-block-text {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  position: relative;
-  top: 50%;
-  transform: translate(0, -50%);
-}
-
-form {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-}
-
-input{box-sizing:border-box}
-
-input {
-  outline: none;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  height: 34px;
-  width: 100%;
-}
-
-button {
-  height: 40px;
-  border-radius: 20px;
-  border-style: none;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%, 0);
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
-
-#edit {
-  margin-top: 25px;
-  width: 90px;
-  background-color: deepskyblue;
-}
-
-#update {
-  margin-top: 50px;
-  width: 110px;
-  background-color: deepskyblue;
-}
-
-#buy {
-  margin-top: 45px;
-  width: 85px;
-  background-color: #c23a2c;
-}
-
-#book-list {
-  height: 170px;
-  width: 386px;
-  padding: 5px;
-  background-color: lightgrey;
-  border-radius: 5px;
-  overflow: auto;
-}
-
-.book {
-  display: grid;
-  border-radius: 4px;
-  background-color: white;
-  padding: 10px;
-  margin-bottom: 5px;
-  grid-template:
-    "title quantity-selector" 20px
-    "price quantity-selector" 20px
-    / 60% 40%;
-}
-
-.title-area {
-  grid-area: title;
-  font-family: 'Crimson Text', serif;
-  font-style: italic;
-  font-size: 16px;
-}
-
-.price-area {
-  grid-area: price;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.quantity-selector-area {
-  grid-area: quantity-selector;
-  margin: auto;
-}
-
-.plus-button, .quantity, .minus-button {
-  display: inline-block;
-  height: 24px;
-  width: 24px;
-  border-style: none;
-  border-radius: 50%;
-  background-color: #c23a2c;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-  color: white;
-}
-
-.quantity {
-  border-radius: 0;
-  background-color: white;
-  font-size: 16px;
-  font-weight: normal;
-  color: black;
-  cursor: default;
-}
+ #signup-form{
+    background-color: var(--main-color)
+  }
 </style>

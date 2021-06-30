@@ -53,7 +53,7 @@ export default {
       return desc
     },
     getData () {
-      const ref = this.$firebase.database().ref('/')
+      const ref = this.$firebase.database().ref('books')
       ref.on('value', snapshot => {
         const values = snapshot.val()
         this.books = Object.keys(values).map(i => values[i])

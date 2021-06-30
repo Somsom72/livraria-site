@@ -35,7 +35,7 @@ const router = new Router({
     {
       path: '/profile-info',
       name: 'profile-info',
-      component: () => import(/* webpackChunkName: "about" */ './pages/cadastro/Cadastro')
+      component: () => import(/* webpackChunkName: "about" */ './pages/meu-perfil/MeuPerfil')
     },
     {
       path: '/detalhes',

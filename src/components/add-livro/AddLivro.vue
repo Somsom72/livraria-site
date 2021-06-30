@@ -5,13 +5,13 @@
             <div class="card-block">
                 <form class="form-group">
                     <label for="">Título:</label>
-                    <input v-model='title' type="text" name="text" placeholder="Nome" class="form-control" required><br>
+                    <input v-model='title' type="text" name="title" placeholder="Título" class="form-control" required><br>
                     <label for="">Descrição:</label>
                     <textarea v-model='description' rows="5" class="form-control" required></textarea><br>
                     <label for="">Preço:</label>
-                    <input v-model='price' type="number" name="Preço" min="0" placeholder="R$0.00" class="form-control" required><br>
+                    <input v-model='price' type="number" name="price" min="0" placeholder="R$0.00" class="form-control" required><br>
                     <label for="">Quantidade:</label>
-                    <input v-model='ammount' type="number" name="quantidade" min="1" placeholder="Quantidade" class="form-control" required><br>
+                    <input v-model='ammount' type="number" name="ammount" min="1" placeholder="Quantidade" class="form-control" required><br>
                     <label for="">Categorias:</label><br>
                     <input type="checkbox" value='Romance' v-model="categories"> Romance <br>
                     <input type="checkbox" value='Aventura' v-model="categories"> Aventura <br>
@@ -24,7 +24,7 @@
                     <label for="">Preview:</label>
                     <textarea v-model='preview' rows="5" class="form-control" required></textarea><br>
                     <label for="">Foto de capa: </label>
-                    <input @change='handleFile($event)' required type="file" name="foto" accept='image/*' class="btn btn-primary"><br><br>
+                    <input @change='handleFile($event)' required type="file" name="cover" accept='image/*' class="btn btn-primary"><br><br>
                     <input @click.prevent='submit()' class="btn btn-primary" type="submit" name="new" value="Registrar Produto">
                 </form><br>
             </div>
@@ -73,7 +73,7 @@ export default {
       let url = ''
 
       try {
-        const ref = this.$firebase.database().ref(this.title)
+        const ref = this.$firebase.database().ref(`books/${this.title}`)
 
         if (this.file) {
           const snapshot = await this.$firebase.storage().ref('covers').child(this.fileName).put(this.file)
@@ -96,6 +96,7 @@ export default {
 
         this.clearFields()
       } catch (err) {
+        console.log(err)
         alert('Erro ao cadastrar livro')
       }
     },
