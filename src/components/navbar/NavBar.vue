@@ -111,10 +111,8 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <router-link class="dropdown-item" to='/profile-info'>Meu Perfil</router-link>
+              <router-link class="dropdown-item" to='/profile-edit'>Editar Perfil</router-link>
               <a class="dropdown-item" href="cart.html">Carrinho</a>
-              <a class="dropdown-item" href="profile-edit.html"
-                >Editar Perfil</a
-              >
               <a class="btn dropdown-item" @click.prevent='doLogout()'>Logout</a>
             </ul>
           </li>

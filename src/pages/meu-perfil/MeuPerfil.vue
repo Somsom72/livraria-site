@@ -45,8 +45,6 @@ export default {
 
   beforeMount () {
     this.user = window.user
-    console.log('#######################')
-    console.log(this.user)
   }
 
 }

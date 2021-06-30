@@ -34,16 +34,6 @@ export default {
     })
   },
 
-  async beforeUpdate () {
-    var currentUser = await this.$firebase.auth().currentUser
-    if (currentUser !== null && currentUser.uid !== null && currentUser.uid !== '') {
-      var user = await this.getUser(currentUser.uid)
-      EventBus.$emit('login', user)
-    } else {
-      EventBus.$emit('logout')
-    }
-  },
-
   methods: {
     async getUser (uid) {
       var user = await this.$firebase.database()
