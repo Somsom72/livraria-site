@@ -12,7 +12,7 @@
                         <!-- Descrição -->
                         <p class='card-text' id="description">{{truncate(book.description)}}</p>
                         <!-- Preço -->
-                        <h4 class='card-text'>{{book.price}}</h4>
+                        <h4 class='card-text'>R${{book.price}}</h4>
                         <!-- Botão de comprar -->
                         <button @click='goToBookDetails(i)' class='btn btn-light'>Mais Detalhes</button>
                     </div>
