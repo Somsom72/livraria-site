@@ -1,6 +1,6 @@
 <template>
 <div class="meu-perfil">
-<div class="card m-4 p-3" id="signup-form">
+<div class="card m-4 p-3 centered" id="info-form">
     <div class="card-block">
       <h1> Meu Perfil </h1>
         <img src="../../assets/img/profile-icon.png" id="icon" alt="profile icon"><br>
@@ -45,7 +45,10 @@ export default {
 
   beforeMount () {
     this.user = window.user
+    console.log('#######################')
+    console.log(this.user)
   }
+
 }
 </script>
 
@@ -75,11 +78,12 @@ border-width: 1px;
 position: relative;
 left: 50%;
 transform: translate(-50%, 0);
+width: 700px
 }
 
 .pill-block-text {
 font-family: 'Open Sans', sans-serif;
-font-size: 14px;
+font-size: 18px;
 font-weight: bold;
 text-align: center;
 position: relative;
@@ -95,7 +99,8 @@ font-size: 25px;
 font-size: 16px;
 }
 
- #signup-form{
-background-color: var(--main-color)
+#info-form{
+background-color: var(--main-color);
+width: 1000px
 }
 </style>

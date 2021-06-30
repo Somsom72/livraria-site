@@ -237,6 +237,7 @@ export default {
       this.isLoggedIn = true
       this.user = user
       window.user = user
+      this.$router.push({ name: 'home' })
     })
     EventBus.$on('logout', () => {
       this.isLoggedIn = false

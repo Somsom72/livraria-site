@@ -27,8 +27,8 @@ import { EventBus } from '../../bus.js'
 export default {
   name: 'home',
 
-  created () {
-    this.getData()
+  async created () {
+    await this.getData()
     this.filterBooksByCategory('Todos')
     EventBus.$on('set-filter', data => {
       this.filterBooksByCategory(data)
@@ -40,8 +40,8 @@ export default {
     })
   },
 
-  updated () {
-    this.getData()
+  async beforeUpdate () {
+    await this.getData()
   },
 
   methods: {
@@ -52,12 +52,10 @@ export default {
       }
       return desc
     },
-    getData () {
-      const ref = this.$firebase.database().ref('books')
-      ref.on('value', snapshot => {
-        const values = snapshot.val()
-        this.books = Object.keys(values).map(i => values[i])
-      })
+    async getData () {
+      const ref = await this.$firebase.database().ref('books').get()
+      var books = ref.val()
+      this.books = Object.keys(books).map(i => books[i])
     },
 
     filterBooksByCategory (category) {

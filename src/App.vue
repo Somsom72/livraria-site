@@ -17,19 +17,31 @@ export default {
 
   async mounted () {
     var currentUser = await this.$firebase.auth().currentUser
-    if (currentUser !== null && currentUser.uid !== null) {
+    if (currentUser || (currentUser !== null && currentUser.uid !== null && currentUser.uid !== '')) {
       var user = await this.getUser(currentUser.uid)
       EventBus.$emit('login', user)
+    } else {
+      EventBus.$emit('logout')
     }
-    this.$firebase.auth().onAuthStateChanged(firebaseUser => {
-      if (!firebaseUser) {
+    this.$firebase.auth().onAuthStateChanged(async firebaseUser => {
+      if (!firebaseUser || firebaseUser === null || firebaseUser.uid === null || firebaseUser.uid === '') {
         EventBus.$emit('logout')
         this.$router.push({ name: 'home' })
       } else {
-        const user = this.getUser(firebaseUser.uid)
+        const user = await this.getUser(firebaseUser.uid)
         EventBus.$emit('login', user)
       }
     })
+  },
+
+  async beforeUpdate () {
+    var currentUser = await this.$firebase.auth().currentUser
+    if (currentUser !== null && currentUser.uid !== null && currentUser.uid !== '') {
+      var user = await this.getUser(currentUser.uid)
+      EventBus.$emit('login', user)
+    } else {
+      EventBus.$emit('logout')
+    }
   },
 
   methods: {
