@@ -24,7 +24,8 @@ Os requerimentos do nosso sistema particular não acrescentam aos listados na de
 - O site deve possuir uma página de mais informações sobre um livro, em que são exibidas descrições, preços, quantidades em estoque e prévias gratuitas de livros. É nesta página que o usuário teria a opção de adicionar o produto ao carrinho.
 - O site deve possuir uma página exibindo os nomes dos produtos que se encontram no carrinho do cliente, juntamente aos preços e à possibilidade de alterar as quantidades destes produtos. É nesta página que o usuário teria a opção de finalizar a compra.
 - O site deve possuir uma página que exibe as informações sobre a conta de um cliente. O cliente também deve ter a opção de alterar essas informações.
-- O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.
+- O site deve possuir uma página em que os administradores podem criar, atualizar e deletar produtos.
+- Obs. Acima está a descrição pensada desde a primeira entrega deste trabalho.
 
 | ![Diagrama de Navegação (Inicial)](./testes/navDiagramLivraria.png?raw=true) | 
 |:--:| 
@@ -34,8 +35,8 @@ Os requerimentos do nosso sistema particular não acrescentam aos listados na de
 
 3. **Comments About the Code:** 
 
-O código fonte é dividido em diretórios intuitivamente nomeados:
-- No diretório 'project', encontram-se as páginas estáticas implementadas para a primeira entrega deste trabalho, sem funcionalidades.
+O código fonte é dividido em diretórios intuitivamente nomeados ( **IMPORTANTE: da branch 'vue3_spa'** ):
+- No diretório 'project', encontram-se as páginas estáticas implementadas para a primeira entrega deste trabalho, sem funcionalidades (descontinuado).
 - No diretório 'public', encontra-se o arquivo 'index.html', para o qual o navegador é apontado quando iniciamos a SPA.
 - No diretório 'src', está implementada a SPA:
   - Dentro de 'src' está o diretório 'pages', que implementa em SPA, usando Vue.js, todas as funcionalidades do site inicialmente propostas.
@@ -56,12 +57,87 @@ Testamos utilizando o postman para realizar requests e conferir replies. Para co
 Testes Realizados:
 
 1) Adicionar um novo livro, pela tela de admin, usando conta de admin.
+
+| ![Realtime Database](./testes/1-1.png?raw=true) | 
+|:--:| 
+| *Realtime Database* |
+
+| ![Visualmente](./testes/1-2.png?raw=true) | 
+|:--:| 
+| *Visualmente* |
+
+| ![Realtime Database](./testes/1-3.png?raw=true) | 
+|:--:| 
+| *Realtime Database* |
+
 2) Editar as informações de um livro, pela tela de detalhes do livro, usando conta de admin.
+
+| ![Realtime Database](./testes/2-1.png?raw=true) | 
+|:--:| 
+| *Realtime Database* |
+
+| ![Visualmente](./testes/2-2.png?raw=true) | 
+|:--:| 
+| *Visualmente* |
+
+| ![Realtime Database](./testes/2-3.png?raw=true) | 
+|:--:| 
+| *Realtime Database* |
+
 3) Remover um livro, pela tela de detalhes do livro, usando conta de admin.
+
+| ![Realtime Database](./testes/3-1.png?raw=true) | 
+|:--:| 
+| *Realtime Database* |
+
+| ![Visualmente](./testes/3-2.png?raw=true) | 
+|:--:| 
+| *Visualmente* |
+
+| ![Realtime Database](./testes/3-3.png?raw=true) | 
+|:--:| 
+| *Realtime Database* |
+
 4) Cadastro de um novo usuário.
+
+| ![Realtime Database](./testes/4-1.png?raw=true) | 
+|:--:| 
+| *Realtime Database* |
+
+| ![Visualmente](./testes/4-2.png?raw=true) | 
+|:--:| 
+| *Visualmente* |
+
+| ![Realtime Database](./testes/4-3.png?raw=true) | 
+|:--:| 
+| *Realtime Database* |
+
 5) Login de um usuário cadastrado.
+
+| ![Visualmente](./testes/5-1.png?raw=true) | 
+|:--:| 
+| *Visualmente* |
+
+| ![Visualmente](./testes/5-2.png?raw=true) | 
+|:--:| 
+| *Visualmente* |
+
 6) Filtro de categoria de livros.
+
+| ![Visualmente](./testes/6-1.png?raw=true) | 
+|:--:| 
+| *Visualmente* |
+
+| ![Visualmente](./testes/6-2.png?raw=true) | 
+|:--:| 
+| *Visualmente* |
+
 7) Filtro de pesquisa de livros. 
+
+| ![Visualmente](./testes/7-1.png?raw=true) | 
+|:--:| 
+| *Visualmente* |
+
 
 
 6. **Build Procedures:** 
@@ -92,7 +168,7 @@ E entrar no localhost:8080 pelo navegador.
 
 7. **Problems:** 
 
-Uma dificuldade encontrada desde a primeira entrega foi, além de implementar as funcionalidades, passar o trabalho que já havia sido feito para uma SPA em Vue.
+No problems.
 
 
 
