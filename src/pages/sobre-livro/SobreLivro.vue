@@ -30,7 +30,7 @@
             <tr>
               <td>
                 <div style="position:relative; text-align:center; margin:auto; padding:30px">
-                  <strong class="screen-text">Descriçãodo Livro: </strong>
+                  <strong class="screen-text">Descrição do Livro: </strong>
                   <div width="700px">{{book.description}}</div>
                 </div>
               </td>
