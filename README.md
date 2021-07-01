@@ -10,19 +10,19 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC - 
 
 
 1. **Requirements:** 
-*Os requerimentos do nosso sistema particular não acrescentam aos listados na descrição do trabalho. Uma exceção seria a funcionalidade de visualizar um trecho do livro gratuitamente, antes de optar por adicioná-lo ao carrinho.*
+Os requerimentos do nosso sistema particular não acrescentam aos listados na descrição do trabalho. Uma exceção seria a funcionalidade de visualizar um trecho do livro gratuitamente, antes de optar por adicioná-lo ao carrinho.
 
 
 
 2. **Project Description:**
-- *O projeto visa implementar um website de vendas para uma livraria virtual: a "Livraria ICMC". São previstos três tipos de usuários: um internauta não cadastrado, um cliente cadastrado e um administrador.* 
-- *A única categoria de produtos a serem vendidos é a de livros. As principais informações armazenadas no lado do servidor serão características dos usuários ou dos livros (exatamente aquelas elencadas na descrição do trabalho: nome, email, foto, preço, etc.).*
-- *O site deve possuir uma página principal, com alguns produtos exibidos, um campo de busca e campos para se cadastrar ou fazer login.*
-- *O site deve possuir uma página dedicada à entrada de campos para o cadastro de novos usuários.*
-- *O site deve possuir uma página de mais informações sobre um livro, em que são exibidas descrições, preços, quantidades em estoque e prévias gratuitas de livros. É nesta página que o usuário teria a opção de adicionar o produto ao carrinho.*
-- *O site deve possuir uma página exibindo os nomes dos produtos que se encontram no carrinho do cliente, juntamente aos preços e à possibilidade de alterar as quantidades destes produtos. É nesta página que o usuário teria a opção de finalizar a compra.*
-- *O site deve possuir uma página que exibe as informações sobre a conta de um cliente. O cliente também deve ter a opção de alterar essas informações.*
-- *O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.*  
+- O projeto visa implementar um website de vendas para uma livraria virtual: a "Livraria ICMC". São previstos três tipos de usuários: um internauta não cadastrado, um cliente cadastrado e um administrador.
+- A única categoria de produtos a serem vendidos é a de livros. As principais informações armazenadas no lado do servidor serão características dos usuários ou dos livros (exatamente aquelas elencadas na descrição do trabalho: nome, email, foto, preço, etc.).
+- O site deve possuir uma página principal, com alguns produtos exibidos, um campo de busca e campos para se cadastrar ou fazer login.
+- O site deve possuir uma página dedicada à entrada de campos para o cadastro de novos usuários.
+- O site deve possuir uma página de mais informações sobre um livro, em que são exibidas descrições, preços, quantidades em estoque e prévias gratuitas de livros. É nesta página que o usuário teria a opção de adicionar o produto ao carrinho.
+- O site deve possuir uma página exibindo os nomes dos produtos que se encontram no carrinho do cliente, juntamente aos preços e à possibilidade de alterar as quantidades destes produtos. É nesta página que o usuário teria a opção de finalizar a compra.
+- O site deve possuir uma página que exibe as informações sobre a conta de um cliente. O cliente também deve ter a opção de alterar essas informações.
+- O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.
 
 | ![Diagrama de Navegação (Inicial)](./testes/diagrama/navDiagramLivraria.png?raw=true) | 
 |:--:| 
@@ -31,40 +31,38 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC - 
 
 
 3. **Comments About the Code:** 
-*O código fonte é dividido em diretórios intuitivamente nomeados:*
-- *No diretório 'project', encontram-se as páginas estáticas implementadas para a primeira entrega deste trabalho, sem funcionalidades e sem SPA.*
-- *No diretório 'public', encontra-se o arquivo 'index.html', para o qual o navegador é apontado quando iniciamos a SPA.*
-- *No diretório 'src', está implementada a SPA:*
-  - *Dentro de 'src' está o diretório 'pages', que implementa em SPA, usando Vue.js, todas as funcionalidades do site inicialmente propostas.*
-  - *Os demais arquivos e diretórios em 'src' estabelecem uma conexão entre o servidor da Google Firebase e o web-app.*
-- *Demais observações sobre a implementação podem ser encontrados em forma de comentários dentro do próprio código.*
+O código fonte é dividido em diretórios intuitivamente nomeados:
+- No diretório 'project', encontram-se as páginas estáticas implementadas para a primeira entrega deste trabalho, sem funcionalidades e sem SPA.
+- No diretório 'public', encontra-se o arquivo 'index.html', para o qual o navegador é apontado quando iniciamos a SPA.
+- No diretório 'src', está implementada a SPA:
+  - Dentro de 'src' está o diretório 'pages', que implementa em SPA, usando Vue.js, todas as funcionalidades do site inicialmente propostas.
+  - Os demais arquivos e diretórios em 'src' estabelecem uma conexão entre o servidor da Google Firebase e o web-app.
+- Demais observações sobre a implementação podem ser encontrados em forma de comentários dentro do próprio código.
 
 
 
 4. **Test Plan:** 
-*Quando a lógica do servidor for implementada, testaremos utilizando o postman para realizar requests e conferir replies. Para conferir a qualidade do front-end, exaustaremos os caminhos de navegação pelo site manualmente, enquanto modificando variáveis como browsers e dispositivos.*
-
-*Testes Realizados:*
-
-1)
+Testamos utilizando o postman para realizar requests e conferir replies. Para conferir a qualidade do front-end e back-end, exaustaremos os caminhos de navegação pelo site manualmente, enquanto modificando variáveis como browsers e dispositivos. Os resultados são expostos abaixo. Além disso, cabe notar que os testes foram realizados sem entraves nos navegadores Chrome, Edge e Firefox, e também em um celular Samsung Galaxy s10e (navegador Chrome). Os tempos de resposta do servidor se mantiveram dentro do esperado. 
 
 
 
 5. **Test Results:** 
-Text describing the test results. If an automatic test tool/framework is used,
-its output can be used.
-**
 
-*Resultados dos Testes Acima:*
+Testes Realizados:
 
-1)
-
+1) a
+2) a
+3) a
+4) a
+5) a
+6) a
+7) 
 
 
 6. **Build Procedures:** 
-*Para executar a aplicação tem-se duas opções:*
-1) *Acessar o link https://livraria-site.web.app , hosteado no Google Firebase.*
-2) *Localmente, clonando o repositório, e com yarn instalado, executar dentro do diretório raíz os primeiros dois:*
+Para executar a aplicação tem-se duas opções:
+1) Acessar o link https://livraria-site.web.app , hosteado no Google Firebase.
+2) Localmente, clonando o repositório, e com yarn instalado, executar dentro do diretório raíz os primeiros dois:
   
 ### Project setup
 ```
