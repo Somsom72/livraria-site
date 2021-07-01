@@ -45,7 +45,7 @@
           </tbody>
         </table>
     </div>
-    <div class="text-center" style="margin: 10px 5% 10px 5%;">
+    <div v-if='!isNotLogged' class="text-center" style="margin: 10px 5% 10px 5%;">
         <button class="btn btn-success btn-lg" type="button" name="carrinho">Adicionar ao Carrinho</button>
       </div>
   </div>
@@ -55,7 +55,12 @@
 <script>
 export default {
   name: 'sobre-livro',
-  props: ['book']
+  props: ['book'],
+  computed: {
+    isNotLogged: function () {
+      return window.user === null || window.user === {}
+    }
+  }
 }
 </script>
 
