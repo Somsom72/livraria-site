@@ -289,6 +289,8 @@ export default {
 <style scoped lang="scss">
 #bar {
   background-color: var(--main-color);
+  width: 100%;
+  min-width: 900px;
 }
 #title-text {
   font-size: 3em;
