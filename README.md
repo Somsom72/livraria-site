@@ -10,7 +10,7 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC - 
 
 
 1. **Requirements:** 
-*Os requerimentos do nosso sistema particular não acrescentam aos listados na descrição do trabalho. Uma exceção seria a funcionalidade de visualizar algumas páginas do livro gratuitamente, antes de optar por adicioná-lo ao carrinho.*
+*Os requerimentos do nosso sistema particular não acrescentam aos listados na descrição do trabalho. Uma exceção seria a funcionalidade de visualizar um trecho do livro gratuitamente, antes de optar por adicioná-lo ao carrinho.*
 
 
 
@@ -24,14 +24,20 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC - 
 - *O site deve possuir uma página que exibe as informações sobre a conta de um cliente. O cliente também deve ter a opção de alterar essas informações.*
 - *O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.*  
 
-| ![Diagrama de Navegação (Inicial)](.testes/diagrama/navDiagramLivraria.png?raw=true) | 
+| ![Diagrama de Navegação (Inicial)](./testes/diagrama/navDiagramLivraria.png?raw=true) | 
 |:--:| 
 | *Diagrama de Navegação (Inicial)* |
 
 
 
 3. **Comments About the Code:** 
-*O código fonte é dividido em diretórios intuitivamente nomeados. Os arquivos .html encontram-se fora desses diretórios, e cada um representa uma página distinta do sistema. Demais observações sobre a implementação podem ser encontrados em forma de comentários dentro do próprio código.*
+*O código fonte é dividido em diretórios intuitivamente nomeados:*
+- *No diretório 'project', encontram-se as páginas estáticas implementadas para a primeira entrega deste trabalho, sem funcionalidades e sem SPA.*
+- *No diretório 'public', encontra-se o arquivo 'index.html', para o qual o navegador é apontado quando iniciamos a SPA.*
+- *No diretório 'src', está implementada a SPA:*
+  - *Dentro de 'src' está o diretório 'pages', que implementa em SPA, usando Vue.js, todas as funcionalidades do site inicialmente propostas.*
+  - *Os demais arquivos e diretórios em 'src' estabelecem uma conexão entre o servidor da Google Firebase e o web-app.*
+- *Demais observações sobre a implementação podem ser encontrados em forma de comentários dentro do próprio código.*
 
 
 
@@ -56,11 +62,27 @@ its output can be used.
 
 
 6. **Build Procedures:** 
-A step-by-step guide to run your code. You should start telling how to
-install whatever software you need, then how to download/build your program, and finally
-how to set up the environment to run it. Imagine that someone installing will just follow
-these commands (nothing more).
-**
+*Para executar a aplicação tem-se duas opções:*
+1) *Acessar o link https://livraria-site.web.app , hosteado no Google Firebase.*
+2) *Localmente, clonando o repositório, e com yarn instalado, executar dentro do diretório raíz os primeiros dois:*
+  
+### Project setup
+```
+yarn install
+```
+### Compiles and hot-reloads for development
+```
+yarn run serve
+```
+### Compiles and minifies for production
+```
+yarn run build
+```
+### Lints and fixes files
+```
+yarn run lint
+```
+E entrar no localhost:8080 pelo navegador. 
 
 
 
@@ -78,22 +100,4 @@ Any comments you wish to add.
 
 
 
-## Project setup
-```
-yarn install
-```
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
-
-### Compiles and minifies for production
-```
-yarn run build
-```
-
-### Lints and fixes files
-```
-yarn run lint
-```
