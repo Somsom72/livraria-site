@@ -39,7 +39,7 @@ O código fonte é dividido em diretórios intuitivamente nomeados:
 - No diretório 'public', encontra-se o arquivo 'index.html', para o qual o navegador é apontado quando iniciamos a SPA.
 - No diretório 'src', está implementada a SPA:
   - Dentro de 'src' está o diretório 'pages', que implementa em SPA, usando Vue.js, todas as funcionalidades do site inicialmente propostas.
-  - Os demais arquivos e diretórios em 'src' estabelecem uma conexão entre o servidor da Google Firebase e o web-app.
+  - Os demais arquivos e diretórios em 'src' estabelecem uma conexão entre o servidor da Google Firebase (NoSql) e o web-app.
 - O diretório 'testes' contém prints de alguns testes realizados, contidos na seção 5 logo abaixo.
 - Demais observações sobre a implementação podem ser encontrados em forma de comentários dentro do próprio código.
 
@@ -55,13 +55,13 @@ Testamos utilizando o postman para realizar requests e conferir replies. Para co
 
 Testes Realizados:
 
-1) a
-2) a
-3) a
-4) a
-5) a
-6) a
-7) 
+1) Adicionar um novo livro, pela tela de admin, usando conta de admin.
+2) Editar as informações de um livro, pela tela de detalhes do livro, usando conta de admin.
+3) Remover um livro, pela tela de detalhes do livro, usando conta de admin.
+4) Cadastro de um novo usuário.
+5) Login de um usuário cadastrado.
+6) Filtro de categoria de livros.
+7) Filtro de pesquisa de livros. 
 
 
 6. **Build Procedures:** 
@@ -97,7 +97,8 @@ Uma dificuldade encontrada desde a primeira entrega foi, além de implementar as
 
 
 9. **Comments:** 
--
+ 
+ Entrar em contato com os autores se desejar o user/senha da conta admin (para por exemplo alterar o estoque dos livros).
 
 
 
