@@ -24,7 +24,7 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC - 
 - *O site deve possuir uma página que exibe as informações sobre a conta de um cliente. O cliente também deve ter a opção de alterar essas informações.*
 - *O site deve possuir uma página em que os administradores podem buscar, criar, atualizar e deletar produtos.*  
 
-| ![Diagrama de Navegação (Inicial)](diagrama/navDiagramLivraria.png?raw=true) | 
+| ![Diagrama de Navegação (Inicial)](.testes/diagrama/navDiagramLivraria.png?raw=true) | 
 |:--:| 
 | *Diagrama de Navegação (Inicial)* |
 
