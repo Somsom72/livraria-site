@@ -20,7 +20,7 @@ const router = new Router({
     {
       path: '/cart',
       name: 'cart',
-      component: () => import('./pages/cadastro/Cadastro')
+      component: () => import('./pages/carrinho/Carrinho')
     },
     {
       path: '/admin',

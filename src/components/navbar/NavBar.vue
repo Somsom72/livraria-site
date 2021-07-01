@@ -96,7 +96,7 @@
             </ul>
           </li>
 
-          <!-- Botão de Minha Conta -- Fazer v-if v-else com login -->
+          <!-- Botão de Minha Conta -->
           <li v-if="isLoggedIn" class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
@@ -112,7 +112,7 @@
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
               <router-link class="dropdown-item" to='/profile-info'>Meu Perfil</router-link>
               <router-link class="dropdown-item" to='/profile-edit'>Editar Perfil</router-link>
-              <a class="dropdown-item" href="cart.html">Carrinho</a>
+              <router-link class="dropdown-item" to='/cart'>Carrinho</router-link>
               <a class="btn dropdown-item" @click.prevent='doLogout()'>Logout</a>
             </ul>
           </li>
