@@ -99,6 +99,6 @@ font-size: 16px;
 
 #info-form{
 background-color: var(--main-color);
-width: 1000px
+width: 900px
 }
 </style>

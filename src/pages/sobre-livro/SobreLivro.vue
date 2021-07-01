@@ -86,7 +86,7 @@ export default {
 <style scoped lang="scss">
 #main-card{
 background-color: var(--main-color);
-width: 1200px
+width: 900px;
 }
 
 .capa-de-livro{

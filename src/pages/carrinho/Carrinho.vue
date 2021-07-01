@@ -177,7 +177,7 @@ export default {
 <style scoped lang="scss">
 #main-card{
 background-color: var(--main-color);
-width: 1000px
+width: 900px
 }
 
 #ammount{
