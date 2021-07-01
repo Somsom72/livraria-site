@@ -45,9 +45,19 @@
           </tbody>
         </table>
     </div>
-    <div v-if='!isNotLogged' class="text-center" style="margin: 10px 5% 10px 5%;">
-        <button class="btn btn-success btn-lg" type="button" name="carrinho">Adicionar ao Carrinho</button>
+    <div class="container">
+      <div class="row">
+        <div v-if='isAdmin' class="text-center col-sm" style="margin: 10px 5% 10px 5%;">
+          <button @click='editBook()' class="btn btn-warning btn-lg" type="button" name="carrinho">Editar</button>
+        </div>
+        <div v-if='!isNotLogged' class="text-center col-sm" style="margin: 10px 5% 10px 5%;">
+          <button class="btn btn-success btn-lg" type="button" name="carrinho">Adicionar ao Carrinho</button>
+        </div>
+        <div v-if='isAdmin' class="text-center col-sm" style="margin: 10px 5% 10px 5%;">
+          <button class="btn btn-danger btn-lg" type="button" name="carrinho">Excluir</button>
+        </div>
       </div>
+    </div>
   </div>
 </div>
 </template>
@@ -59,6 +69,15 @@ export default {
   computed: {
     isNotLogged: function () {
       return window.user === null || window.user === {}
+    },
+    isAdmin: function () {
+      return !this.isNotLogged && window.user.admin
+    }
+  },
+
+  methods: {
+    editBook () {
+      this.$router.push({ name: 'book-edit', params: { book: this.book } })
     }
   }
 }
