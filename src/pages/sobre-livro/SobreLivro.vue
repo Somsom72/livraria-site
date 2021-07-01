@@ -54,7 +54,7 @@
           <button class="btn btn-success btn-lg" type="button" name="carrinho">Adicionar ao Carrinho</button>
         </div>
         <div v-if='isAdmin' class="text-center col-sm" style="margin: 10px 5% 10px 5%;">
-          <button class="btn btn-danger btn-lg" type="button" name="carrinho">Excluir</button>
+          <button @click='removeBook()' class="btn btn-danger btn-lg" type="button" name="carrinho">Excluir</button>
         </div>
       </div>
     </div>
@@ -78,6 +78,18 @@ export default {
   methods: {
     editBook () {
       this.$router.push({ name: 'book-edit', params: { book: this.book } })
+    },
+
+    async removeBook () {
+      try {
+        const ref = this.$firebase.database().ref(`books`)
+        ref.remove(this.book.title)
+        alert('Livro Excluido')
+        this.$router.push({ name: 'home' })
+      } catch (err) {
+        console.log(err)
+        alert('Erro ao excluir livro')
+      }
     }
   }
 }
