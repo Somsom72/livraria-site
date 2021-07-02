@@ -82,8 +82,8 @@ export default {
 
     async removeBook () {
       try {
-        const ref = this.$firebase.database().ref(`books`)
-        ref.remove(this.book.title)
+        const ref = this.$firebase.database().ref(`books/${this.book.title}`)
+        ref.remove()
         alert('Livro Excluido')
         this.$router.push({ name: 'home' })
       } catch (err) {
