@@ -24,6 +24,7 @@
 </template>
 
 <script>
+import { EventBus } from '../../bus.js'
 export default {
   name: 'cadastro',
   data () {
@@ -52,11 +53,22 @@ export default {
         }
         const ref = this.$firebase.database().ref(`users/${userCredential.user.uid}`)
         ref.set(user)
-        window.user = user
+        EventBus.$emit('login', user)
         alert('Usuario Cadastrado')
         this.$router.push({ name: 'home' })
       } catch (err) {
-        alert('Erro ao cadastrar')
+        if (err.code) {
+          if (err.code === 'auth/weak-password') {
+            alert('A senha deve possuir 6 ou mais caracteres')
+          } else if (err.code === 'auth/invalid-email') {
+            alert('Email inválido')
+          } else {
+            alert('Erro ao cadastrar')
+          }
+        } else {
+          alert('Erro ao cadastrar')
+        }
+        console.log(err)
       }
     }
   }

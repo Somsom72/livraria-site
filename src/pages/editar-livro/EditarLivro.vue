@@ -40,7 +40,7 @@ export default {
       const file = this.file
       if (file) {
         const split = file.name.split('.')
-        return `${this.title}.${split[ split.length - 1 ]}`
+        return `${new Date().getTime()}.${split[ split.length - 1 ]}`
       } else {
         return ''
       }
