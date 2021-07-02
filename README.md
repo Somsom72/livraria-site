@@ -9,13 +9,13 @@ Website criado como trabalho para a disciplina de desenvolvimento web do ICMC - 
 - 8936972,	  Henrique Martins Loschiavo,			    henrique.loschiavo@usp.br;		
 
 
-1. **Requirements:** 
+## 1. **Requirements:** 
 
 Os requerimentos do nosso sistema particular não acrescentam aos listados na descrição do trabalho. Uma exceção seria a funcionalidade de visualizar um trecho do livro gratuitamente, antes de optar por adicioná-lo ao carrinho.
 
 
 
-2. **Project Description:**
+## 2. **Project Description:**
 
 - O projeto visa implementar um website de vendas para uma livraria virtual: a "Livraria ICMC". São previstos três tipos de usuários: um internauta não cadastrado, um cliente cadastrado e um administrador.
 - A única categoria de produtos a serem vendidos é a de livros. As principais informações armazenadas no lado do servidor serão características dos usuários ou dos livros (exatamente aquelas elencadas na descrição do trabalho: nome, email, foto, preço, etc.).
@@ -33,7 +33,7 @@ Os requerimentos do nosso sistema particular não acrescentam aos listados na de
 
 
 
-3. **Comments About the Code:** 
+## 3. **Comments About the Code:** 
 
 O código fonte é dividido em diretórios intuitivamente nomeados ( **IMPORTANTE: da branch 'vue3_spa'** ):
 - No diretório 'project', encontram-se as páginas estáticas implementadas para a primeira entrega deste trabalho, sem funcionalidades (descontinuado).
@@ -46,13 +46,13 @@ O código fonte é dividido em diretórios intuitivamente nomeados ( **IMPORTANT
 
 
 
-4. **Test Plan:** 
+## 4. **Test Plan:** 
 
 Testamos utilizando o postman para realizar requests e conferir replies. Para conferir a qualidade do front-end e back-end, exaustaremos os caminhos de navegação pelo site manualmente, enquanto modificando variáveis como browsers e dispositivos. Os resultados são expostos abaixo. Além disso, cabe notar que os testes foram realizados sem entraves nos navegadores Chrome, Edge e Firefox, e também em um celular Samsung Galaxy s10e (navegador Chrome). Os tempos de resposta do servidor se mantiveram dentro do esperado. 
 
 
 
-5. **Test Results:** 
+## 5. **Test Results:** 
 
 Testes Realizados:
 
@@ -72,15 +72,11 @@ Testes Realizados:
 
 2) Editar as informações de um livro, pela tela de detalhes do livro, usando conta de admin.
 
-| ![Realtime Database](./testes/2-1.png?raw=true) | 
-|:--:| 
-| *Realtime Database* |
-
-| ![Visualmente](./testes/2-2.png?raw=true) | 
+| ![Visualmente](./testes/2-1.jpg?raw=true) | 
 |:--:| 
 | *Visualmente* |
 
-| ![Realtime Database](./testes/2-3.png?raw=true) | 
+| ![Realtime Database](./testes/2-2.jpg?raw=true) | 
 |:--:| 
 | *Realtime Database* |
 
@@ -90,7 +86,7 @@ Testes Realizados:
 |:--:| 
 | *Realtime Database* |
 
-| ![Visualmente](./testes/3-2.png?raw=true) | 
+| ![Visualmente](./testes/3-2.jpg?raw=true) | 
 |:--:| 
 | *Visualmente* |
 
@@ -140,7 +136,7 @@ Testes Realizados:
 
 
 
-6. **Build Procedures:** 
+## 6. **Build Procedures:** 
 
 Para executar a aplicação tem-se duas opções:
 1) Acessar o link https://livraria-site.web.app , hosteado no Google Firebase.
@@ -166,15 +162,15 @@ E entrar no localhost:8080 pelo navegador.
 
 
 
-7. **Problems:** 
+## 7. **Problems:** 
 
 No problems.
 
 
 
-9. **Comments:** 
+## 8. **Comments:** 
  
- Entrar em contato com os autores se desejar o user/senha da conta admin (para por exemplo alterar o estoque dos livros).
+ Entrar em contato com os autores se desejar o user/senha da conta admin (para por exemplo alterar o estoque dos livros). Também entrar em contato caso ocorrer algum erro inesperado, pois pode ser que seja facilmente resolvido. Exemplos comuns: tentar cadastrar um usuário novo com email que não esteja no formato xxx@xxx.com; tentar inserir um livro com título que contém o caractere '.' (pois o título é usado como chave da instância de livro na base de dados); tentar cadastrar um usuário com senha inferior a 6 caracteres; etc.
 
 
 
