@@ -54,99 +54,13 @@ export default {
     }
   },
 
+  created () {
+    this.cartItems = window.cart
+  },
+
   data () {
     return {
       cartItems: [
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        },
-        {
-          title: 'TESTE',
-          price: 25.99,
-          ammount: 12,
-          maxAmmount: 18
-        }
       ]
     }
   },
@@ -166,9 +80,14 @@ export default {
       }
     },
 
-    removeCartItem (i) {
-      this.cartItems.splice(i, 1)
-      // TODO: Remover do firebase
+    removeCartItem (index) {
+      for (let i = 0; i < window.cart.length; i++) {
+        if (window.cart[i].title === this.cartItems[index].title) {
+          window.cart.splice(i, 1)
+          this.cartItems = window.cart
+          break
+        }
+      }
     }
   }
 }

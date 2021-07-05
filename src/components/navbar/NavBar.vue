@@ -235,12 +235,16 @@ export default {
       this.isLoggedIn = true
       this.user = user
       window.user = user
+      if (!window.cart) {
+        window.cart = []
+      }
       this.$router.push({ name: 'home' })
     })
     EventBus.$on('logout', () => {
       this.isLoggedIn = false
       this.user = {}
       window.user = null
+      window.cart = null
       this.$router.push({ name: 'home' })
     })
   },

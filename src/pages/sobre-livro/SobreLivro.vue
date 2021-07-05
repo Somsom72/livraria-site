@@ -51,7 +51,8 @@
           <button @click='editBook()' class="btn btn-warning btn-lg" type="button" name="carrinho">Editar</button>
         </div>
         <div v-if='!isNotLogged' class="text-center col-sm" style="margin: 10px 5% 10px 5%;">
-          <button class="btn btn-success btn-lg" type="button" name="carrinho">Adicionar ao Carrinho</button>
+          <button v-if='inCart' @click='removeBookFromCart()' class="btn btn-danger btn-lg" type="button" name="carrinho">Remover do Carrinho</button>
+          <button v-else @click='addBookToCart()' class="btn btn-success btn-lg" type="button" name="carrinho">Adicionar ao Carrinho</button>
         </div>
         <div v-if='isAdmin' class="text-center col-sm" style="margin: 10px 5% 10px 5%;">
           <button @click='removeBook()' class="btn btn-danger btn-lg" type="button" name="carrinho">Excluir</button>
@@ -66,12 +67,26 @@
 export default {
   name: 'sobre-livro',
   props: ['book'],
+  data () {
+    return {
+      inCart: false
+    }
+  },
+
   computed: {
     isNotLogged: function () {
       return window.user === null || window.user === {}
     },
     isAdmin: function () {
       return !this.isNotLogged && window.user.admin
+    }
+  },
+
+  created () {
+    if (window.cart.filter((book) => book.title === this.book.title).length > 0) {
+      this.inCart = true
+    } else {
+      this.inCart = false
     }
   },
 
@@ -90,6 +105,27 @@ export default {
         console.log(err)
         alert('Erro ao excluir livro')
       }
+    },
+
+    addBookToCart () {
+      window.cart.push({
+        title: this.book.title,
+        price: parseFloat(this.book.price),
+        ammount: 1,
+        maxAmmount: this.book.ammount
+      })
+      this.inCart = true
+    },
+
+    removeBookFromCart () {
+      for (let i = 0; i < window.cart.length; i++) {
+        if (window.cart[i].title === this.book.title) {
+          window.cart.splice(i, 1)
+          this.inCart = false
+          break
+        }
+      }
+      alert('Livro removido do carrinho')
     }
   }
 }
