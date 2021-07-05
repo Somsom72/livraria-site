@@ -52,7 +52,10 @@
         </div>
         <div v-if='!isNotLogged' class="text-center col-sm" style="margin: 10px 5% 10px 5%;">
           <button v-if='inCart' @click='removeBookFromCart()' class="btn btn-danger btn-lg" type="button" name="carrinho">Remover do Carrinho</button>
-          <button v-else @click='addBookToCart()' class="btn btn-success btn-lg" type="button" name="carrinho">Adicionar ao Carrinho</button>
+          <div v-else>
+            <button v-if='this.book.ammount > 0' @click='addBookToCart()' class="btn btn-success btn-lg" type="button" name="carrinho">Adicionar ao Carrinho</button>
+            <button v-else class="btn btn-success btn-lg" type="button" name="carrinho" disabled>Adicionar ao Carrinho</button>
+          </div>
         </div>
         <div v-if='isAdmin' class="text-center col-sm" style="margin: 10px 5% 10px 5%;">
           <button @click='removeBook()' class="btn btn-danger btn-lg" type="button" name="carrinho">Excluir</button>
