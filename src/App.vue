@@ -23,7 +23,7 @@ export default {
     } else {
       EventBus.$emit('logout')
     }
-    this.$firebase.auth().onAuthStateChanged(async firebaseUser => {
+    /* this.$firebase.auth().onAuthStateChanged(async firebaseUser => {
       if (!firebaseUser || firebaseUser === null || firebaseUser.uid === null || firebaseUser.uid === '') {
         EventBus.$emit('logout')
         this.$router.push({ name: 'home' })
@@ -31,7 +31,7 @@ export default {
         const user = await this.getUser(firebaseUser.uid)
         EventBus.$emit('login', user)
       }
-    })
+    }) */
   },
 
   methods: {

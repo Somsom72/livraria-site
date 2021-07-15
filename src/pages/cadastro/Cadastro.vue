@@ -29,11 +29,11 @@ export default {
   name: 'cadastro',
   data () {
     return {
-      name: '',
-      password: '',
-      email: '',
-      phone: '',
-      address: '',
+      name: null,
+      password: null,
+      email: null,
+      phone: null,
+      address: null,
       user: {}
     }
   },
@@ -43,7 +43,7 @@ export default {
         var userCredential = await this.$firebase.auth()
           .createUserWithEmailAndPassword(this.email, this.password)
 
-        const user = {
+        this.user = {
           id: userCredential.user.uid,
           name: this.name,
           email: this.email,
@@ -52,8 +52,9 @@ export default {
           admin: false
         }
         const ref = this.$firebase.database().ref(`users/${userCredential.user.uid}`)
-        ref.set(user)
-        EventBus.$emit('login', user)
+        ref.set(this.user)
+        window.user = this.user
+        EventBus.$emit('login', this.user)
         alert('Usuario Cadastrado')
         this.$router.push({ name: 'home' })
       } catch (err) {
