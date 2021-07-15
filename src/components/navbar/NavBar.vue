@@ -263,6 +263,7 @@ export default {
       this.isLoggedIn = false
       this.user = null
       window.user = null
+      this.$router.push({ name: 'home' })
     },
 
     async doLogin () {
@@ -273,6 +274,7 @@ export default {
         window.user = user
         this.user = user
         this.isLoggedIn = true
+        this.$router.push({ name: 'home' })
       } catch (error) {
         console.log(error)
         alert('Erro ao realizar login')
