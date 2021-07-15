@@ -42,7 +42,6 @@ export default {
       try {
         var userCredential = await this.$firebase.auth()
           .createUserWithEmailAndPassword(this.email, this.password)
-
         this.user = {
           id: userCredential.user.uid,
           name: this.name,
@@ -53,10 +52,9 @@ export default {
         }
         const ref = this.$firebase.database().ref(`users/${userCredential.user.uid}`)
         ref.set(this.user)
-        window.user = this.user
+        await this.$firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         EventBus.$emit('login', this.user)
         alert('Usuario Cadastrado')
-        this.$router.push({ name: 'home' })
       } catch (err) {
         if (err.code) {
           if (err.code === 'auth/weak-password') {
