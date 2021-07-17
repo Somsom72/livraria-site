@@ -116,31 +116,31 @@ export default {
         for (let i = 0; i < window.cart.length; i++) {
           var ref = await this.$firebase.database().ref(`books/${window.cart[i].title}`).get()
           var book = ref.val()
-          //Se o livro exixteir no Banco de dados
+          // Se o livro exixteir no Banco de dados
           if (book) {
-            //Se a quantidade de livros disponíveis for menor que o desejado
+            // Se a quantidade de livros disponíveis for menor que o desejado
             if (book.ammount < window.cart[i].ammount) {
               this.canBuy = false
               this.message += `\n - ${window.cart[i].title}: Não há quantidade sufuciente em estoque.`
-              //Se a quantidade disponível for maior que zero atualiza a quantidade atual e a quantidade máxima de ítens no carrinho para aquela quantidade
+              // Se a quantidade disponível for maior que zero atualiza a quantidade atual e a quantidade máxima de ítens no carrinho para aquela quantidade
               if (book.ammount > 0) {
                 window.cart[i].ammount = book.ammount
                 window.cart[i].maxAmmount = book.ammount
-              //Se a quantidade disponível for menor que zero remove o utem do carrinho
+              // Se a quantidade disponível for menor que zero remove o utem do carrinho
               } else {
                 window.cart.splice(i, 1)
               }
             }
-            //Se não exixtir remove ele do carrinho
+            // Se não exixtir remove ele do carrinho
           } else {
             this.canBuy = false
             this.message += `\n - ${window.cart[i].title}: Não é mais vendido na loja.`
             window.cart.splice(i, 1)
           }
         }
-        //Se não houverem erros durante a compra
+        // Se não houverem erros durante a compra
         if (this.canBuy) {
-          //Itera pelos itens do carrinho e diminui a sua quantidade nos ítens da loja
+          // Itera pelos itens do carrinho e diminui a sua quantidade nos ítens da loja
           for (let i = 0; i < window.cart.length; i++) {
             var refWrite = this.$firebase.database().ref(`books/${window.cart[i].title}`)
             var refRead = await this.$firebase.database().ref(`books/${window.cart[i].title}`).get()
@@ -148,7 +148,7 @@ export default {
             updatedBook.ammount -= window.cart[i].ammount
             refWrite.update(updatedBook)
           }
-          //Limpa e atualiza o carrinho
+          // Limpa e atualiza o carrinho
           window.cart = []
           this.updateCart()
           this.canBuy = true
