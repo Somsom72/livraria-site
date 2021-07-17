@@ -1,10 +1,6 @@
 # livraria-site
-<<<<<<< HEAD
-Website de uma livraria virtual ("Livraria ICMC"), criado como trabalho para a disciplina de desenvolvimento web do ICMC - USP, no primeiro semestre de 2021.
-=======
-Website criado como trabalho para a disciplina de desenvolvimento web do ICMC - USP, no primeiro semestre de 2021.
->>>>>>> main
 
+Website de uma livraria virtual ("Livraria ICMC"), criado como trabalho para a disciplina de desenvolvimento web do ICMC - USP, no primeiro semestre de 2021.
 
 - Grupo 11:						
 - 11219216,   Gustavo Bartholomeu Trad Souza,			gustavobartholomeu@usp.br;		
