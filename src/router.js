@@ -48,6 +48,11 @@ const router = new Router({
       name: 'book-edit',
       props: true,
       component: () => import('./pages/editar-livro/EditarLivro')
+    },
+    {
+      path: '/bought-items',
+      name: 'bought-items',
+      component: () => import('./pages/compra-finalizada/CompraFinalizada')
     }
   ]
 })

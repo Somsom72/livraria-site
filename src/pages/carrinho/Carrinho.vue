@@ -32,7 +32,7 @@
           R${{ totalAmmount }}
         </div>
       </div>
-      <button v-if='totalAmmount > 0' class="btn btn-success mt-5" id="buy-button">Comprar</button>
+      <button v-if='totalAmmount > 0' class="btn btn-success mt-5" id="buy-button" @click='comprar()'>Comprar</button>
       <button v-else class="btn btn-success mt-5" id="buy-button" disabled>Comprar</button>
     </div>
   </div>
@@ -106,6 +106,12 @@ export default {
       } catch {
         alert('Erro ao salvar carrinho')
       }
+    },
+
+    comprar () {
+      window.cart = []
+      this.updateCart()
+      this.$router.push({ name: 'bought-items' })
     }
   }
 }
