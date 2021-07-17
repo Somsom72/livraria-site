@@ -235,6 +235,7 @@ export default {
       this.isLoggedIn = true
       this.user = user
       window.user = user
+      window.cart = user.cart
       if (!window.cart) {
         window.cart = []
       }

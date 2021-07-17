@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import { EventBus } from '../../bus.js'
+
 export default {
   name: 'carrinho',
   computed: {
@@ -56,6 +58,10 @@ export default {
 
   created () {
     this.cartItems = window.cart
+
+    EventBus.$on('update-cart', () => {
+      this.updateCart()
+    })
   },
 
   data () {
@@ -70,6 +76,7 @@ export default {
       if (this.cartItems[i].ammount < this.cartItems[i].maxAmmount) {
         this.cartItems[i].ammount++
       }
+      this.updateCart()
     },
 
     decreaseItems (i) {
@@ -78,6 +85,7 @@ export default {
       } else {
         this.removeCartItem(i)
       }
+      this.updateCart()
     },
 
     removeCartItem (index) {
@@ -87,6 +95,16 @@ export default {
           this.cartItems = window.cart
           break
         }
+      }
+    },
+
+    updateCart () {
+      try {
+        const ref = this.$firebase.database().ref(`users/${window.user.id}`)
+        window.user.cart = window.cart
+        ref.update(window.user)
+      } catch {
+        alert('Erro ao salvar carrinho')
       }
     }
   }

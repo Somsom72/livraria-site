@@ -48,8 +48,10 @@ export default {
           email: this.email,
           phone: this.phone,
           address: this.address,
-          admin: false
+          admin: false,
+          cart: []
         }
+
         const ref = this.$firebase.database().ref(`users/${userCredential.user.uid}`)
         ref.set(this.user)
         await this.$firebase.auth().signInWithEmailAndPassword(this.email, this.password)

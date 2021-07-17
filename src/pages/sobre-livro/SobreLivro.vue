@@ -67,6 +67,8 @@
 </template>
 
 <script>
+import { EventBus } from '../../bus.js'
+
 export default {
   name: 'sobre-livro',
   props: ['book'],
@@ -117,6 +119,7 @@ export default {
         ammount: 1,
         maxAmmount: this.book.ammount
       })
+      EventBus.$emit('update-cart')
       this.inCart = true
     },
 
@@ -128,6 +131,7 @@ export default {
           break
         }
       }
+      EventBus.$emit('update-cart')
       alert('Livro removido do carrinho')
     }
   }
